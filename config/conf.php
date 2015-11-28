@@ -7,10 +7,10 @@ $rep=__DIR__.'/../';
 
 
 //attributes for DB connexion
-$user="";
-$password = "";
-$base = "";
-$host = "";
+$user="b13a96f19555ea";
+$password = "2df8f1ec";
+$base = "pico_wanderblog_DB";
+$host = "br-cdbr-azure-south-a.cloudapp.net";
 
 //views list
 $views['home']='views/home.php';
