@@ -16,9 +16,9 @@ final class BD {
     
     
     /*
-     *Constructor
+     * Constructor
      * create the PDO instance
-     * Constructeur qui crée l'instance de PDO, méthode qui se connecte à la base passée en arg.
+     * create pdo instance and connect the database
      */
   private function __construct(){
         //variables from conf.php file

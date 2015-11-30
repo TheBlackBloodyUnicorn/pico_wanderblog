@@ -15,6 +15,8 @@ $host = "br-cdbr-azure-south-a.cloudapp.net";
 //views list
 $views['home']='views/home.php';
 $views['error']='views/error.php';
+$views['footer']='views/footer.php';
+$views['header']='views/header.php';
 
 
 ?>
