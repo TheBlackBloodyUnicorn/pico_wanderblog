@@ -12,6 +12,7 @@ $password = "2df8f1ec";
 $base = "pico_wanderblog_DB";
 $host = "br-cdbr-azure-south-a.cloudapp.net";
 
+
 //views list
 $views['home']='views/home.php';
 $views['error']='views/error.php';

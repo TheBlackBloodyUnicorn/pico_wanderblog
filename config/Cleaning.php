@@ -1,4 +1,4 @@
-<?php class cleaning{
+<?php class Cleaning{
 	//class to clean parameters in order to avoid code injection attacks
 	
 	//cleans URLs 

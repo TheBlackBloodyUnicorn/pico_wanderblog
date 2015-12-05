@@ -1,6 +1,6 @@
 <?php
 
-class user
+class User
 {	
 	private $login;//VARCHAR(20)
 	private $password;//VARCHAR(20)
