@@ -12,10 +12,10 @@ class FrontController{
 		* create a list of action for every type of users
 		* actions correspond to the action field of a get/post method in the html
 		*/
-		$actionsAdministrator = array(NULL,"","","","","","");
-		$actionsReader = array(NULL,"","","");
-		$actionsVisitor = array(NULL,"","","");
-		$actionsAuthor = array(Null, "","");
+		$actionsAdministrator = array(NULL,"home","","","","","");
+		$actionsReader = array(NULL,"home","","");
+		$actionsVisitor = array(NULL,"home","","");
+		$actionsAuthor = array(Null, "home","");
 		$actionsFront = array("","","");
 
 		//get the action
@@ -23,8 +23,18 @@ class FrontController{
 		$action=Cleaning::cleanString($action); //cleanning the action
 		
 		try{
-			$this->connection();
-
+			if($this->isConnected){
+				//do things
+			} else {
+				if($action == 'connection')
+					$this->connection();
+				elseif(in_array($action,$actionsVisitor))
+					$cont=new Controller_visitor($action);
+				else{
+					$viewError[] =	"action \"".$action."\" unknown";
+					require ($rep.$views['error']);
+				}
+			}
 		}catch (Exception $e){
 			$viewError[] = "unexpected error";
 			require($rep.$views['error']);
@@ -51,6 +61,13 @@ class FrontController{
 			}
 		}
 		$cont=new Controller_visitor('home'); // if variables are not correct
+	}
+
+	private function isConnected(){
+		if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
+			return false;
+		}
+		return true;
 	}
 }
 
