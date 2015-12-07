@@ -2,10 +2,10 @@
 
 class DAL{
 
-	static function  getUser($login,$password)
+	static function  getUser($username,$password)
 	{
 		$req='SELECT * FROM registered_user WHERE username=? AND password=?';
-		$param  = array(0 => array($login, PDO::PARAM_STR) , 1 => array($password, PDO::PARAM_STR));
+		$param  = array(0 => array($username, PDO::PARAM_STR) , 1 => array($password, PDO::PARAM_STR));
 		$res= DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
 		$user=NULL;
 		foreach ($res as $data) {
