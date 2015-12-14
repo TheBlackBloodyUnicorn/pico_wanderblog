@@ -7,14 +7,22 @@ $rep=__DIR__.'/../';
 
 
 //attributes for DB connexion
-$user="b13a96f19555ea";
-$password = "2df8f1ec";
-$base = "pico_wanderblog_DB";
-$host = "br-cdbr-azure-south-a.cloudapp.net";
+//$user="b13a96f19555ea";
+//$password = "2df8f1ec";
+//$base = "pico_wanderblog_DB";
+//$host = "br-cdbr-azure-south-a.cloudapp.net";
+
+$user="root";
+$password = "mtoypc15000";
+$base = "pico_wanderblog";
+$host = "localhost";
+
 
 //views list
 $views['home']='views/home.php';
 $views['error']='views/error.php';
+$views['footer']='views/footer.php';
+$views['header']='views/header.php';
 
 
 ?>

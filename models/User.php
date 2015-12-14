@@ -1,20 +1,20 @@
 <?php
 
-class user
+class User
 {	
-	private $login;//VARCHAR(20)
+	private $username;//VARCHAR(20)
 	private $password;//VARCHAR(20)
 	private $role;//enum
 
 	
-    public function getLogin()
+    public function getUsername()
     {
-        return $this->login;
+        return $this->username;
     }
     
-    private function setLogin($new)
+    private function setUsername($new)
     {
-        $this->login = $new;
+        $this->username = $new;
     }
 	
 	public function getPassword()
@@ -37,9 +37,9 @@ class user
         $this->role = $new;
     }
 
-    public function __construct($login,$password,$role)
+    public function __construct($username,$password,$role)
     {
-		$this->setLogin($login);
+		$this->setUsername($username);
 		$this->setPassword($password);
 		$this->setRole($role);
     }	

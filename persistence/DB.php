@@ -3,7 +3,7 @@
 /**
  * SINGLETON because we only want one instance of the db
  */
-final class BD {
+final class DB {
     // Variables 
     
     private $dbh = null; // PDO Statement = base state. The db connection will return a state that we'll stock here .
@@ -16,9 +16,9 @@ final class BD {
     
     
     /*
-     *Constructor
+     * Constructor
      * create the PDO instance
-     * Constructeur qui crée l'instance de PDO, méthode qui se connecte à la base passée en arg.
+     * create pdo instance and connect the database
      */
   private function __construct(){
         //variables from conf.php file
@@ -51,7 +51,7 @@ final class BD {
    public static function getInstance() {
  
      if(is_null(self::$instance)) {
-       self::$instance = new BD();  
+       self::$instance = new DB();  
      }
  
      return self::$instance;
