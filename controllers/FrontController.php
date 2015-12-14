@@ -27,7 +27,7 @@ class FrontController{
 				//do things
 			} else {
 				if($action == 'connection')
-					$this->connection();
+					$this->sign_in();
 				elseif(in_array($action,$actionsVisitor))
 					$cont=new Controller_visitor($action);
 				else{
@@ -47,16 +47,16 @@ class FrontController{
 		exit(0);
 	}
 
-	private function connection(){
+	private function sign_in(){
 		global $rep, $views, $TmessagesConnection;
 		$Terreurs=array();
 
-		if(isset($_POST['connection'])){ // If we clicked on the connection button
+		if(isset($_POST['sign_in'])){ // If we clicked on the sign_in button
 			$username = isset($_POST['username']) ? $_POST['username'] : '';
 			$pwd = isset($_POST['password']) ? $_POST['password'] : '';
 
 			if(Validation::val_username_password($username,$pwd,$TmessagesConnection)) {//variable verifications
-				Model_user::connexion($username,$pwd);//connect the user
+				Model_user::sign_in($username,$pwd);//connect the user
 				//maybe update messagesError to explain the user the problem ?		
 			}
 		}

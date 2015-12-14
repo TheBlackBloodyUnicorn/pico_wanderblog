@@ -2,7 +2,7 @@
 class Model_user
 {
 
-	public static function connection($username, $password){
+	public static function sign_in($username, $password){
 		global $rep, $vues, $TmessagesConnection;
 		
 		$user=DAL::getUser(Cleaning::cleanString($username),sha1(Cleaning::cleanString($password))); //on teste si c'est dans la bdd (en nettoyant au passage)
