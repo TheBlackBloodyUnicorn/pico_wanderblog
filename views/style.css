@@ -44,9 +44,22 @@ nav a:link{
     width: 40px;
 }
 
-#signup{
+#sign:link{
+    display: block;
+    width: 40px;
+    height: 15px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF),
+    to(#DDDDDD));
+    background: -moz-linear-gradient(top, #FFFFFF, #DDDDDD);
+    background: linear-gradient(#FFFFFF, #DDDDDD);
+    border-radius: 5px;
 
 }
+
+
 
 #container{
     padding-left: 40px;
