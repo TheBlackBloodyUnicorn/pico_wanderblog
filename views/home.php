@@ -38,8 +38,15 @@
 
             mysqli_select_db($base, $con);
 
-            echo "<h1>Test</h1>";
+            $query = "SELECT * FROM 'adventure'";
 
+            $adventures = mysqli_query($query);
+
+            while($row = mysqli_fetch_array($adventures, MYSQLI_ASSOC)){
+                $name = $row['name'];
+
+                echo "<p>$name</p>";
+            }
             ?>
         </div>
     </div>
