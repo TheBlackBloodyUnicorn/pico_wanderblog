@@ -8,7 +8,14 @@ class User
 	private $email;
 	private $country;
 	private $isAccepted;
+	private $id;
 
+	public function getId(){
+		return $this->id;
+	}
+	private function setId($new){
+		$this->id = $new;
+	}
 	public function getIsAccepted()
 	{
 			return $this->isAccepted;
@@ -69,8 +76,9 @@ class User
         $this->role = $new;
     }
 
-    public function __construct($username,$password,$role, $email, $country, $isAccepted)
+    public function __construct($id,$username,$password,$role, $email, $country, $isAccepted)
     {
+		$this->setId($id);
 		$this->setUsername($username);
 		$this->setPassword($password);
 		$this->setRole($role);
