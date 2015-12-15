@@ -1,5 +1,6 @@
 <?php
 class Adventure{
+  private $id;
   private $title;
   private $description;
   private $country;
@@ -8,22 +9,28 @@ class Adventure{
   private $tags; //array of strings corresponding to tags
 
 
+  public function getId(){
+    return $this->id;
+  }
+  private function setId($new){
+    $this->id = $new;
+  }
   public function getComments(){
     return $this->comments;
   }
-  private function setComments($new){
+  public function setComments($new){
     $this->comments = $new;
   }
   public function getPhotos(){
     return $this->photos;
   }
-  private function setPhotos($new){
+  public function setPhotos($new){
     $this->photos = $new;
   }
   public function getTags(){
     return $this->tags;
   }
-  private function setTags($new){
+  public function setTags($new){
     $this->tags = $new;
   }
   public function getTitle(){
@@ -45,14 +52,12 @@ class Adventure{
     $this->country = $new;
   }
 
-  public function __construct($title,$description,$country, $tags, $photos, $comments)
+  public function __construct($id,$title,$description,$country)
   {
+  $this->setId($id);
   $this->setTitle($title);
   $this->setDescription($description);
   $this->setCountry($country);
-  $this->setTags($tags);
-  $this->setPhotos($photos);
-  $this->setComments($comments);
   }
 }
 
