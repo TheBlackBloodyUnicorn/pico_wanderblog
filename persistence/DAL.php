@@ -23,6 +23,16 @@ class DAL{
 		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
 	}
 
+	/*find a user information knowing his id*/
+	static function getUserById($id){
+		$req = 'SELECT * FROM registered_user WHERE id=?';
+		$param  = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$user = new User($res[0]["id"],$res[0]["username"],$res[0]["password"],$res[0]["user_level"], $res[0]["email"], $res[0]["country"], $res[0]["is_approved"]);
+		return $user;
+	}
+
+/*find an return a list of all the adventures*/
 	static function getAllAdventures(){
 		$req = 'SELECT * FROM adventure';
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,'');
@@ -31,6 +41,56 @@ class DAL{
 			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"]);
 		}
 		return $adventures;
+	}
+
+ /*count the number of votes for the given adventure*/
+	static function countVotesForAdventure($id){
+		$req = 'SELECT * FROM vote WHERE adventure_id=?';
+		$param = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$count = 0;
+		foreach ($res as $data) {
+			$count ++;
+		}
+		return $count;
+	}
+
+	/*get the path all the photos from the given adventure*/
+	static function getPhotosAdventure($id){
+		$req = 'SELECT path FROM photo WHERE adventure_id=?';
+		$param = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$photos = array();
+		foreach ($res as $data) {
+			$photos[] = $data["path"];
+		}
+		return $photos;
+	}
+
+	/*get the tags of the given adventure*/
+	static function getTagsAdventure($id){
+		$req = 'SELECT name FROM tag WHERE adventure_id=?';
+		$param = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$tags = array();
+		foreach ($res as $data) {
+			$tags[] = $data["name"];
+		}
+		return $tags;
+	}
+
+	/*retrun all the comments of the given adventure*/
+	static function getCommentsAdventure($id){
+		$req = 'SELECT * FROM comment WHERE adventure_id=?';
+		$param = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$comments = array();
+		foreach ($res as $data){
+			$text = $data["content"];
+			$user = DAL::getUserById($data["user_id"]);
+			$comments[] = new Comment($user->getUsername(),$text);
+		}
+		return $comments;
 	}
 }
 ?>
