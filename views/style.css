@@ -76,8 +76,8 @@ nav a:visited{
     color: black;
 }
 
-#sign:link{
-    display: block;
+#sign{
+    display: inline;
     width: 40px;
     height: 15px;
     text-align: center;

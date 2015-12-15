@@ -15,6 +15,7 @@
 <div id="container">
 <div id="topbar">
         <a id="sign" href="signup.html">Sign up</a>
+        <a id="sign" href="signin.html">Sign in</a>
         <img src = "placehold.it/1200x300">
 </div>
 <nav>
