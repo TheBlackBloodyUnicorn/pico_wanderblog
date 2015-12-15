@@ -21,9 +21,9 @@ class Controller_visitor{
 
 	private function display_home_page(){
 		global $rep, $views;
-		
-		//get the n adventures we wants to display here
-		require ($rep.$views['home']);	
+
+		$adventures = Model_adventure::getAdventuresWithHighestVotes(5);
+		require ($rep.$views['home']);
 	}
 }
 ?>
