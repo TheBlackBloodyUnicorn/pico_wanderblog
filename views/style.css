@@ -36,13 +36,14 @@ nav ul{
 
 nav li{
     float: left;
-    display: table;
+    display: inline;
 
 }
 
 nav a:link{
     display: block;
     width: 40px;
+    text-decoration: none;
 }
 
 #sign:link{
