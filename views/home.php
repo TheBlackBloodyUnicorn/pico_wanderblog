@@ -13,24 +13,21 @@
 </head>
 <body>
 <div id="container">
-<div id="topbar">
-        <a id="sign" href="signup.html">Sign up</a>
-        <a id="sign" href="signin.html">Sign in</a>
-        <img src = "placehold.it/1200x300">
-</div>
-<nav>
+    <?php require 'header.php';?>
+
+    <nav>
         <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="adventures.php">Adventures</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="adventures.php">Adventures</a></li>
         </ul>
-</nav>
-<div id="content">
+    </nav>
+    <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
         <p>This website is all about travelling. Share your experience with other travellers.</p>
         <div id="adventure-container">
 
         </div>
-</div>
+    </div>
 </div>
 </body>
 </html>

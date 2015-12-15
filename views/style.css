@@ -1,18 +1,17 @@
 html{
-    background-color: black;
 }
 
 body{
     font-family: "Trebuchet MS";
-    /*width: 1000px;*/
+    width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #container{
-    width: 1200px;
-    margin-left: 100px;
-    margin-right: 100px;
+    /*width: 1200px;*/
+    /*margin-left: 100px;*/
+    /*margin-right: 100px;*/
 }
 
 /*Header*/
