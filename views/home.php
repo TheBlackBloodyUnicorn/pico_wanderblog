@@ -13,7 +13,13 @@
 </head>
 <body>
 <div id="container">
-    <?php require 'header.php';?>
+    <header>
+        <div id="topbar">
+            <a id="sign" href="signIn.html">Sign in</a>
+            <a id="sign" href="signUp.html">Sign Up</a>
+        </div>
+        <img src = "http://placehold.it/1200x300">
+    </header>
 
     <nav>
         <ul>
@@ -25,7 +31,16 @@
         <h1>Welcome to Walk-a-blog!</h1>
         <p>This website is all about travelling. Share your experience with other travellers.</p>
         <div id="adventure-container">
+            <?php
+            global $user, $password, $base, $host;
 
+            $con = mysqli_connect($host, $user, $password);
+
+            mysqli_select_db($base, $con);
+
+            echo "<h1>Test</h1>";
+
+            ?>
         </div>
     </div>
 </div>
