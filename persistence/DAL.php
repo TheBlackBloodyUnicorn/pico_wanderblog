@@ -28,7 +28,7 @@ class DAL{
 		$req = 'SELECT * FROM registered_user WHERE id=?';
 		$param  = array(0 => array($id, PDO::PARAM_INT));
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
-		$user = new User($res[0]["id"],$res[0]["username"],$res[0]["password"],$res[0]["user_level"], $res[0]["email"], $res[0]["country"], $res[0]["is_approved"]);
+		$user = new User($res[0]["id"],$res[0]["username"],$res[0]["password"],$res[0]["user_level"], $res[0]["email"], $res[0]["nationality"], $res[0]["is_approved"]);
 		return $user;
 	}
 
