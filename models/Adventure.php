@@ -4,10 +4,10 @@ class Adventure{
   private $title;
   private $description;
   private $country;
-  private $comments; //array of comments corresponding to the content of a comment (should be a string)
+  private $comments; //array of comments corresponding to the content of comments objects 
   private $photos; //array of string corresponding to the path of photos
   private $tags; //array of strings corresponding to tags
-  private $numberOfVotes; 
+  private $numberOfVotes;
 
 
   public function getNumberOfVotes(){
