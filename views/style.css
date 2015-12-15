@@ -41,7 +41,6 @@ nav ul{
 
 nav li {
     float: left;
-    border-right: 1px solid #dddddd;
     display: table;
 }
 
