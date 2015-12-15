@@ -47,8 +47,34 @@ nav li {
 
 nav a:link{
     display: block;
-    width: 40px;
+    width: 199px;
+    height: 45px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
     text-decoration: none;
+    font-family: Trebuchet MS;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+nav a:hover{
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE),
+    to(#CCCCCC));
+    background: -moz-linear-gradient(top, #EEEEEE, #CCCCCC);
+    background: linear-gradient(#EEEEEE, #CCCCCC);
+}
+
+nav a:active{
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD),
+    to(#FFFFFF));
+    background: -moz-linear-gradient(top, #DDDDDD, #FFFFFF);
+    background: linear-gradient(#DDDDDD, #FFFFFF);
+}
+
+nav a:visited{
+    color: black;
 }
 
 #sign:link{
