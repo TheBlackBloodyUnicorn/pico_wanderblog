@@ -14,18 +14,20 @@ class FrontController{
 		*/
 		$actionsAdministrator = array(NULL,"home","","","","","");
 		$actionsReader = array(NULL,"home","","");
-		$actionsVisitor = array(NULL,"home","sign_in");
+		$actionsVisitor = array(NULL,"home");
 		$actionsAuthor = array(Null, "home","");
-		$actionsFront = array("","","");
 
 		//get the action
 		$action=isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL ;
 		$action=Cleaning::cleanString($action); //cleanning the action
-		
+
 		try{
-			if($this->isConnected){
-				require($rep.$views['error']);
-			} 
+			if($this->isConnected()){
+				if($action=='sign_out'){
+					$this->sign_out();
+				}
+				require($rep.$views['home']);
+			}
 			else {
 				if($action == 'sign_in'){
 					$this->sign_in();
@@ -43,7 +45,7 @@ class FrontController{
 			$viewError[] = "unexpected error";
 			require($rep.$views['error']);
 		}
-		
+
 		exit(0);
 	}
 
@@ -58,10 +60,15 @@ class FrontController{
 				Model_user::sign_in($username,$pwd);//connect the user
 				//maybe update messagesError to explain the user the problem ?
 				//send the guy to the good controller
-				//echo $_SESSION['username'];		
 			}
 		}
-		$cont=new Controller_visitor('home'); // if variables are not correct
+		$cont=new Controller_visitor("home"); // if variables are not correct
+	}
+
+	private function sign_out(){
+		Model_user::sign_out();
+		$_REQUEST['action']=NULL;//to make it easier to come back to the home page
+		$cont=new FrontController();
 	}
 
 	private function isConnected(){
