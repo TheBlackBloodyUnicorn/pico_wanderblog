@@ -23,13 +23,6 @@ nav{
     height: 45px;
     margin-left: auto;
     margin-right: auto;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF),
-    to(#DDDDDD));
-    background: -moz-linear-gradient(top, #FFFFFF, #DDDDDD);
-    background: linear-gradient(#FFFFFF, #DDDDDD);
-    border-radius: 5px;
-    border: 1px solid #dddddd;
-    box-shadow: 0px 0px 8px #CCCCCC;
 }
 
 nav ul{
@@ -58,24 +51,6 @@ nav a:link{
     display: table-cell;
 }
 
-nav a:hover{
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEEEEE),
-    to(#CCCCCC));
-    background: -moz-linear-gradient(top, #EEEEEE, #CCCCCC);
-    background: linear-gradient(#EEEEEE, #CCCCCC);
-}
-
-nav a:active{
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DDDDDD),
-    to(#FFFFFF));
-    background: -moz-linear-gradient(top, #DDDDDD, #FFFFFF);
-    background: linear-gradient(#DDDDDD, #FFFFFF);
-}
-
-nav a:visited{
-    color: black;
-}
-
 #sign{
     display: inline;
     width: 40px;
@@ -89,6 +64,10 @@ nav a:visited{
     background: linear-gradient(#FFFFFF, #DDDDDD);
     border-radius: 5px;
 
+}
+
+#sign a{
+    float: right;
 }
 
 
