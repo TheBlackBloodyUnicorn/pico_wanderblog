@@ -1,11 +1,3 @@
-<!--<form method="post" action="index.php">
-        <p><input type="text" name="username" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <input type="hidden" name="sign_in">
-        <p class="submit"><input type="submit" name="action" value="sign_in"></p>
-
-</form>-->
-
 <html>
 <head>
         <link rel = "stylesheet" href = "style.css" type="text/css">
@@ -15,7 +7,21 @@
 <div id="container">
     <header>
         <div id="topbar">
-            <a id="sign" href="signIn.html">Sign in</a>
+          <?php
+          if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
+            echo "<form method=\"post\" action=\"index.php\">";
+            echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
+            echo "<input type=\"password\" name=\"password\" placeholder=\"Password\">";
+            echo "<input type=\"hidden\" name=\"action\" value=\"sign_in\">";
+            echo "<input type=\"submit\" name=\"sign_in\" value=\"sign in\">";
+            echo "</form>";
+          }else{
+            echo "<form method=\"post\" action=\"index.php\">";
+            echo "<input type=\"hidden\" name=\"action\" value=\"sign_out\">";
+            echo "<input type=\"submit\" name=\"\" value=\"sign out\">";
+            echo "</form>";
+          }
+          ?>
             <a id="sign" href="signUp.html">Sign Up</a>
         </div>
         <img src = "http://placehold.it/1200x300">
@@ -31,23 +37,6 @@
         <h1>Welcome to Walk-a-blog!</h1>
         <p>This website is all about travelling. Share your experience with other travellers.</p>
         <div id="adventure-container">
-            <?php
-            global $user, $password, $base, $host;
-
-            $con = mysqli_connect($host, $user, $password);
-
-            mysqli_select_db($base, $con);
-
-            $query = "SELECT * FROM 'adventure'";
-
-            $adventures = mysqli_query($query);
-
-            while($row = mysqli_fetch_array($adventures, MYSQLI_ASSOC)){
-                $name = $row['name'];
-
-                echo "<p>$name</p>";
-            }
-            ?>
         </div>
     </div>
 </div>
