@@ -5,3 +5,13 @@
         <p class="submit"><input type="submit" name="action" value="sign_in"></p>
 
 </form>
+
+<html>
+<head>
+        <link rel = "stylesheet" href = "style.css">
+        <title>Walk-a-blog | Home</title>
+</head>
+<body>
+<?php include 'header.php';?>
+</body>
+</html>
