@@ -14,7 +14,7 @@ class FrontController{
 		*/
 		$actionsAdministrator = array(NULL,"home","","","","","");
 		$actionsReader = array(NULL,"home","","");
-		$actionsVisitor = array(NULL,"home");
+		$actionsVisitor = array(NULL,"home","display_adventure");
 		$actionsAuthor = array(Null, "home","");
 
 		//get the action
