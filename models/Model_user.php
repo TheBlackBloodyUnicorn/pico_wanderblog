@@ -1,12 +1,14 @@
 <?php
 class Model_user
 {
-
+	/*function connecting a user*/
 	public static function sign_in($username, $password){
 		global $rep, $vues, $TmessagesConnection;
-		
-		$user=DAL::getUser(Cleaning::cleanString($username),sha1(Cleaning::cleanString($password))); //on teste si c'est dans la bdd (en nettoyant au passage)
-	
+
+		//test if the user is in the database (we clean the strings to avoid attcks)
+		$user = DAL::getUser(Cleaning::cleanString($username),Cleaning::cleanString($password));
+
+		//set the session variable with the correct parameters
 		if(!is_null($user)){
 			$_SESSION['username'] = $user->getUsername();
 			$_SESSION['role'] = $user->getRole();
@@ -17,11 +19,15 @@ class Model_user
 		}
 	}
 
+	/*function to disconnect a user*/
+	public static function sign_out(){
+		session_destroy(); //destroy the session
+	}
 
 	public static function get_user($username, $password){
 		return DAL::getUser($username, $password);
 	}
-	
+
 
 
 }

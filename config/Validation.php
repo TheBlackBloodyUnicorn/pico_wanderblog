@@ -4,7 +4,7 @@ class Validation{
 	
 	//basic verification of username
 	static function val_username($username,&$errors){
-		if($login == ''){
+		if($username == ''){
 			$errors[]="Enter a username";
 			return false;
 		}

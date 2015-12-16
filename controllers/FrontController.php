@@ -14,53 +14,61 @@ class FrontController{
 		*/
 		$actionsAdministrator = array(NULL,"home","","","","","");
 		$actionsReader = array(NULL,"home","","");
-		$actionsVisitor = array(NULL,"home","","");
+		$actionsVisitor = array(NULL,"home");
 		$actionsAuthor = array(Null, "home","");
-		$actionsFront = array("","","");
 
 		//get the action
 		$action=isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL ;
 		$action=Cleaning::cleanString($action); //cleanning the action
-		
+
 		try{
-			if($this->isConnected){
-				//do things
-			} else {
-				if($action == 'connection')
+			if($this->isConnected()){
+				if($action=='sign_out'){
+					$this->sign_out();
+				}
+				require($rep.$views['home']);
+			}
+			else {
+				if($action == 'sign_in'){
 					$this->sign_in();
-				elseif(in_array($action,$actionsVisitor))
-					$cont=new Controller_visitor($action);
+				}
+				elseif(in_array($action,$actionsVisitor)){
+					$cont = new Controller_visitor($action);
+				}
 				else{
 					$viewError[] =	"action \"".$action."\" unknown";
 					require ($rep.$views['error']);
 				}
 			}
-		}catch (Exception $e){
+		}
+		catch (Exception $e){
 			$viewError[] = "unexpected error";
 			require($rep.$views['error']);
 		}
 
-		//if($action != NULL){
-		//	$cont=new Controller_admin($action);
-		//}
-		
 		exit(0);
 	}
 
 	private function sign_in(){
 		global $rep, $views, $TmessagesConnection;
 		$Terreurs=array();
-
 		if(isset($_POST['sign_in'])){ // If we clicked on the sign_in button
 			$username = isset($_POST['username']) ? $_POST['username'] : '';
 			$pwd = isset($_POST['password']) ? $_POST['password'] : '';
 
-			if(Validation::val_username_password($username,$pwd,$TmessagesConnection)) {//variable verifications
+			if(Validation::val_username($username,$TmessagesConnection) && Validation::val_password($username,$TmessagesConnection)) {//variable verifications
 				Model_user::sign_in($username,$pwd);//connect the user
-				//maybe update messagesError to explain the user the problem ?		
+				//maybe update messagesError to explain the user the problem ?
+				//send the guy to the good controller
 			}
 		}
-		$cont=new Controller_visitor('home'); // if variables are not correct
+		$cont=new Controller_visitor("home"); // if variables are not correct
+	}
+
+	private function sign_out(){
+		Model_user::sign_out();
+		$_REQUEST['action']=NULL;//to make it easier to come back to the home page
+		$cont=new FrontController();
 	}
 
 	private function isConnected(){
