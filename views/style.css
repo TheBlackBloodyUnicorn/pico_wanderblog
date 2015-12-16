@@ -81,6 +81,7 @@ nav a:active{
     text-align: center;
     vertical-align: middle;
     display: table-cell;
+    float: right;
     /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888),
     to(#ffffff));
     background: -moz-linear-gradient(top, #888888, #ffffff);
@@ -90,7 +91,7 @@ nav a:active{
 }
 
 #sign a{
-    float: right;
+    /*float: right;*/
 }
 
 #topbar{

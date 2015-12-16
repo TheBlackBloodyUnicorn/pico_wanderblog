@@ -27,7 +27,7 @@
                 echo "</div>";
             }
             ?>
-            <a id="sign" href="signUp.html">Sign Up</a>
+            <a id="sign" href="signUp.php">Sign Up</a>
         </div>
         <img src = "http://placehold.it/1200x300">
     </header>
