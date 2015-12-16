@@ -3,13 +3,27 @@ class Adventure{
   private $id;
   private $title;
   private $description;
+  private $author;
   private $country;
-  private $comments; //array of comments corresponding to the content of comments objects 
+  private $comments; //array of comments corresponding to the content of comments objects
   private $photos; //array of string corresponding to the path of photos
   private $tags; //array of strings corresponding to tags
   private $numberOfVotes;
+  private $user_id;
 
 
+  public function getUser_id(){
+    return $this->user_id;
+  }
+  private function setUser_id($new){
+    $this->user_id = $new;
+  }
+  public function getAuthor(){
+    return $this->author;
+  }
+  public function setAuthor($new){
+    $this->author = $new;
+  }
   public function getNumberOfVotes(){
     return $this->numberOfVotes;
   }
@@ -59,12 +73,13 @@ class Adventure{
     $this->country = $new;
   }
 
-  public function __construct($id,$title,$description,$country)
+  public function __construct($id,$title,$description,$country,$user_id)
   {
   $this->setId($id);
   $this->setTitle($title);
   $this->setDescription($description);
   $this->setCountry($country);
+  $this->setUser_id($user_id);
   }
 }
 
