@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<div id="container">
+
 <?php
     include 'header.php';
 ?>
