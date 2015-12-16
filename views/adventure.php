@@ -10,13 +10,12 @@
 		<div>
 			<?php
 				if(isset($adventure)){
-					echo <h1>$adventure->getTitle()</h1>;
+					echo "<h1>".$adventure->getTitle()."</h1>";
 					echo <h2>$adventure->getAuthor()</h2>;
 					echo <p>$adventure->getCountry()</p>;
 					echo <p>$adventure->getDescription()</p>;
-					echo <p>$adventure->getId()</p>;
 					echo <p>$adventure->getNumberOfVotes()</p>;
-					
+
 				}
 			?>
 		</div>

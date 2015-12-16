@@ -115,5 +115,43 @@ class DAL{
 		}
 		return $countries;
 	}
+
+	static function addTag($adventure_id, $name){
+		$req = 'INSERT INTO tag (adventure_id, name) VALUES(?,?)';
+		$param  = array(0 => array($adventure_id, PDO::PARAM_INT) , 1 => array($name, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function addPhoto($adventure_id, $user_id, $path){
+
+	}
+
+	static function addComment($user_id, $content){
+
+	}
+
+	static function vote($user_id, $adventure_id){
+
+	}
+
+	static function addAdventure($adventure){
+
+	}
+
+	static function removeUser($user_id){
+
+	}
+
+	static function accept_user($user_id){
+
+	}
+
+	static function removeComment($comment_id){
+
+	}
+
+	static function removeAdventure($adventure_id){
+
+	}
 }
 ?>
