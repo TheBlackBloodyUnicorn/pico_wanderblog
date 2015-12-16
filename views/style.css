@@ -87,7 +87,7 @@ nav a:active{
     height: 30px;
     text-align: center;
     vertical-align: middle;
-    display: table-cell;
+    /*display: table-cell;*/
     float: right;
     /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888),
     to(#ffffff));
