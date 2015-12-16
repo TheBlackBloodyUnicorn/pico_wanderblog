@@ -27,7 +27,7 @@
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
 						echo "<p>".$adventure->getComments()[$i]."</p>";
 					}
-				}
+				} echo "isset returned false!"; //Test purposes only
 			?>
 		</div>
 	</div>
