@@ -35,12 +35,13 @@
     <nav>
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="adventures.php">Adventures</a></li>
+            <li><a href="./views/adventures.php">Adventures</a></li>
         </ul>
     </nav>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
-        <p>This website is all about travelling. Share your experience with other travellers.</p>
+        <p>>This website is all about travelling. Share your experience with other travellers.</p>
+        <button onclick="location.href='./views/signUp.php'">Sign up</button>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){

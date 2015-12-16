@@ -2,7 +2,7 @@
 class Model_adventure{
 
 /*find and return $number adventures object filled with all informations*/
-  public static function getAdventuresWithHighestVotes($number){
+  public static function getAdventures($number){
     $adventures = DAL::getAllAdventures();
     $photos = array();
     $tags = array();
@@ -25,6 +25,10 @@ class Model_adventure{
     }
 
     return $nAdventures;
+  }
+
+  public static function getAdventureById($id){
+    return DAL::getAdventureById(Cleaning::cleanInt($id));
   }
 }
 
