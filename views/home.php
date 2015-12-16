@@ -41,7 +41,7 @@
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
         <p>>This website is all about travelling. Share your experience with other travellers.</p>
-        <button onclick="location.href='signUp.php'">Sign up</button>
+        <button onclick="location.href='./views/signUp.php'">Sign up</button>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){
