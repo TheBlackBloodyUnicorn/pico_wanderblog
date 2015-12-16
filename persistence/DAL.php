@@ -122,8 +122,16 @@ class DAL{
 		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
 	}
 
-	static function addPhoto($adventure_id, $user_id, $path){
+	static function removeTagAdventure($adventure_id){
+		$req = 'DELETE FROM tag WHERE adventure_id=?';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
 
+	static function addPhoto($adventure_id, $user_id, $path){
+		$req = 'INSERT INTO photo (adventure_id, user_id, path) VALUES(?,?,?)';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT),2 => array($path, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
 	}
 
 	static function addComment($user_id, $content){
