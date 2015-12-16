@@ -7,45 +7,13 @@
     <title>Walk-a-blog | Home</title>
 </head>
 <body>
-<div id="container">
-    <header>
-        <div id="topbar">
-            <?php
-            if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
-                echo "<div id=\"sign\">";
-                echo "<form method=\"post\" action=\"index.php\">";
-                echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
-                echo "<input type=\"password\" name=\"password\" placeholder=\"Password\">";
-                echo "<input type=\"hidden\" name=\"action\" value=\"sign_in\">";
-                echo "<input type=\"submit\" name=\"sign_in\" value=\"sign in\">";
-                echo "</form>";
-                echo "<form method=\"post\" action=\"index.php\">";
-                echo "<input type=\"hidden\" name=\"action\" value=\"display_sign_up\">";
-                echo "<input type=\"submit\" name=\"\" value=\"sign up\">";
-                echo "</form>";
-                echo "</div>";
-            }else{
-                echo "<div id=\"sign\">";
-                echo "<form method=\"post\" action=\"index.php\">";
-                echo "<input type=\"hidden\" name=\"action\" value=\"sign_out\">";
-                echo "<input type=\"submit\" name=\"\" value=\"sign out\">";
-                echo "</form>";
-                echo "</div>";
-            }
-            ?>
-        </div>
-        <!--<img src = "http://placehold.it/1200x300">-->
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="./views/adventures.php">Adventures</a></li>
-        </ul>
-    </nav>
+<?php
+    include 'header.php';
+?>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
-        <p>This website is all about travelling. Share your experience with other travellers.</p>
+        <p>This website is all about travelling. Share your experience with other travellers. Click the link below to sign up!</p>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){
@@ -56,6 +24,9 @@
           ?>
         </div>
     </div>
+<?php
+include 'footer.php';
+?>
 </div>
 </body>
 </html>

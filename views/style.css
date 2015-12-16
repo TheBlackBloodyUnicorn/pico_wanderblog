@@ -6,12 +6,19 @@ body{
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
 }
 
 #container{
     /*width: 1200px;*/
     /*margin-left: 100px;*/
     /*margin-right: 100px;*/
+    background-color: white;
 }
 
 /*Header*/
@@ -44,7 +51,7 @@ nav li {
 
 nav a:link{
     display: block;
-    width: 199px;
+    width: 200px;
     height: 45px;
     text-align: center;
     color: black;
@@ -77,7 +84,7 @@ nav a:active{
 #sign{
     display: inline;
     width: 400px;
-    height: 20px;
+    height: 30px;
     text-align: center;
     vertical-align: middle;
     display: table-cell;
@@ -104,7 +111,8 @@ nav a:active{
 footer{
     margin-top: 5px;
     padding: 5px;
-
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 footer #link{
@@ -116,4 +124,18 @@ footer #link{
     margin-left: 30px;
     float: right;
     text-align: right;
+}
+
+#content{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*SIGN UP FORM*/
+#form-main{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: solid;
+    border-radius: 5px;
 }
