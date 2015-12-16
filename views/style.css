@@ -83,12 +83,13 @@ nav a:active{
 
 #sign{
     /*display: inline;*/
-    width: 600px;
+    width: 500px;
     height: 30px;
     text-align: center;
     vertical-align: middle;
     /*display: table-cell;*/
     float: right;
+    margin-top: 5px;
     /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888),
     to(#ffffff));
     background: -moz-linear-gradient(top, #888888, #ffffff);
