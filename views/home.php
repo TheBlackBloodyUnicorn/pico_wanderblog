@@ -27,15 +27,14 @@
                 echo "</div>";
             }
             ?>
-            <a id="sign" href="signUp.php">Sign Up</a>
         </div>
         <img src = "http://placehold.it/1200x300">
     </header>
 
     <nav>
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="./views/adventures.php">Adventures</a></li>
+            <li><a href="./views/home.php">Home</a></li>
+            <li><a href="./views/adventure.php">Adventures</a></li>
         </ul>
     </nav>
     <div id="content">
