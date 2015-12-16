@@ -31,8 +31,8 @@
         <input type = "text" name = country placeholder = "Enter your country">
         <br>
     </form>
-    <button onclick="location.href='./views/home.php'">Cancel</button>
-    <button onclick="location.href='./views/home.php'">Sign up</button>
+    <button onclick="location.href='./home.php'">Cancel</button>
+    <button onclick="location.href='.home.php'">Sign up</button>
 </div>
 </body>
 </html>
