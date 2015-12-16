@@ -9,13 +9,13 @@
 <div id="container">
     <form>
         Username:<br>
-        <input type = "text" name = username>
+        <input type = "text" name = username placeholder = "This will be your username">
         <br>
         Password:<br>
-        <input type ="text" name = password>
+        <input type ="text" name = password placeholder = "This will be your password">
         <br>
         Confirm password:<br>
-        <input type = "text" name = confirmPass>
+        <input type = "text" name = confirmPass placeholder = "Please re-enter password">
         <br>
         Role:<br>
         <input type = "radio" name = role value = Reader>Reader
@@ -25,12 +25,13 @@
         <input type = "radio" name = role value = Administrator>Administrator
         <br>
         Email:<br>
-        <input type = "text" name = email>
+        <input type = "text" name = email placeholder = "Enter your email address">
         <br>
         Country:<br>
-        <input type = "text" name = country>
+        <input type = "text" name = country placeholder = "Enter your country">
         <br>
     </form>
+    <button onclick="location.href='./views/home.php'">Sign up</button>
 </div>
 </body>
 </html>
