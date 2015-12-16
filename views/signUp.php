@@ -18,11 +18,11 @@
         <input type = "text" name = confirmPass>
         <br>
         Role:<br>
-        <input type = "radio" name = role1 value = Reader>
+        <input type = "radio" name = role1 value = Reader>Reader
         <br>
-        <input type = "radio" name = role2 value = Author>
+        <input type = "radio" name = role2 value = Author>Author
         <br>
-        <input type = "radio" name = role3 value = Administrator>
+        <input type = "radio" name = role3 value = Administrator>Administrator
         <br>
         Email:<br>
         <input type = "text" name = email>
