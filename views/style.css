@@ -82,7 +82,7 @@ nav a:active{
 }
 
 #sign{
-    display: inline;
+    /*display: inline;*/
     width: 600px;
     height: 30px;
     text-align: center;
@@ -95,6 +95,10 @@ nav a:active{
     background: linear-gradient(#888888, #ffffff);*/
     /*border-radius: 5px;*/
 
+}
+
+#form-sign{
+    display: inline;
 }
 
 #sign a{
