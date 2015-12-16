@@ -27,7 +27,7 @@ echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
-            echo"<li><a href=\"./views/home.php\">Home</a></li>";
+            echo"<li><a href=\"./index.php\">Home</a></li>";
             echo"<li><a href=\"./views/adventure.php\">Adventures</a></li>";
             echo"<li><a href=\"#\">Link</a></li>";
             echo"<li><a href=\"#\">Link</a></li>";
