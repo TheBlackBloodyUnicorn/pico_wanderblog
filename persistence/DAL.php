@@ -38,7 +38,7 @@ class DAL{
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,'');
 		$adventures = array();
 		foreach ($res as $data) {
-			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"]);
+			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"],$data["user_id"]);
 		}
 		return $adventures;
 	}
@@ -99,7 +99,7 @@ class DAL{
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
 		$adventures = array();
 		foreach ($res as $data) {
-			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"]);
+			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"],$data["user_id"]);
 		}
 		return $adventures[0];
 	}

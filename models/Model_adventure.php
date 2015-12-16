@@ -14,10 +14,12 @@ class Model_adventure{
       $photos = DAL::getPhotosAdventure($adventure->getId());
       $tags = DAL::getTagsAdventure($adventure->getId());
       $comments = DAL::getCommentsAdventure($adventure->getId());
+      $author = DAL::getUserById($adventure->getUser_id());
       $adventure->setNumberOfVotes($nbVotes);
       $adventure->setTags($tags);
       $adventure->setPhotos($photos);
       $adventure->setComments($comments);
+      $adventure->setAuthor($author->getUsername());
       $nAdventures[] = $adventure;
       $i++;
       if($i >= $number)
@@ -28,7 +30,18 @@ class Model_adventure{
   }
 
   public static function getAdventureById($id){
-    return DAL::getAdventureById(Cleaning::cleanInt($id));
+    $adventure = DAL::getAdventureById(Cleaning::cleanInt($id));
+    $nbVotes = DAL::countVotesForAdventure($adventure->getId());
+    $photos = DAL::getPhotosAdventure($adventure->getId());
+    $tags = DAL::getTagsAdventure($adventure->getId());
+    $comments = DAL::getCommentsAdventure($adventure->getId());
+    $author = DAL::getUserById($adventure->getUser_id());
+    $adventure->setNumberOfVotes($nbVotes);
+    $adventure->setTags($tags);
+    $adventure->setPhotos($photos);
+    $adventure->setComments($comments);
+    $adventure->setAuthor($author->getUsername());
+    return $adventure;
   }
 }
 
