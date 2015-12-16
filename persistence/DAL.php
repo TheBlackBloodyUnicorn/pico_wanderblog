@@ -93,6 +93,7 @@ class DAL{
 		return $comments;
 	}
 
+	/*get the adventure with the given id*/
 	static function getAdventureById($id){
 		$req = 'SELECT * FROM adventure WHERE id=?';
 		$param = array(0 => array($id, PDO::PARAM_INT));
@@ -104,6 +105,7 @@ class DAL{
 		return $adventures[0];
 	}
 
+	/*get all countries*/
 	static function getAllCountries(){
 		$req = 'SELECT * FROM country';
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,'');

@@ -26,6 +26,14 @@ class FrontController{
 				if($action=='sign_out'){
 					$this->sign_out();
 				}
+				switch($_SESSION['role']){
+					case "administrator":
+						break;
+					case "reader":
+						break;
+					case "author":
+						break;
+				}
 				require($rep.$views['home']);
 			}
 			else {
