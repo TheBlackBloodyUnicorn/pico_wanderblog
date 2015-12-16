@@ -35,7 +35,7 @@
     <nav>
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="adventures.php">Adventures</a></li>
+            <li><a href="./views/adventures.php">Adventures</a></li>
         </ul>
     </nav>
     <div id="content">
