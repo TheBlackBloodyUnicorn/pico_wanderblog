@@ -17,6 +17,7 @@
         Confirm password:<br>
         <input type = "text" name = confirmPass>
         <br>
+        <form action="">
         Role:<br>
         <input type = "radio" name = role1 value = Reader>Reader
         <br>
@@ -24,6 +25,7 @@
         <br>
         <input type = "radio" name = role3 value = Administrator>Administrator
         <br>
+        </form>
         Email:<br>
         <input type = "text" name = email>
         <br>
