@@ -14,7 +14,7 @@ class FrontController{
 		*/
 		$actionsAdministrator = array(NULL,"home","","","","","");
 		$actionsReader = array(NULL,"home","","");
-		$actionsVisitor = array(NULL,"home","display_adventure");
+		$actionsVisitor = array(NULL,"home","display_adventure","display_sign_up","sign_up");
 		$actionsAuthor = array(Null, "home","");
 
 		//get the action
@@ -51,15 +51,13 @@ class FrontController{
 
 	private function sign_in(){
 		global $rep, $views, $TmessagesConnection;
-		$Terreurs=array();
 		if(isset($_POST['sign_in'])){ // If we clicked on the sign_in button
 			$username = isset($_POST['username']) ? $_POST['username'] : '';
 			$pwd = isset($_POST['password']) ? $_POST['password'] : '';
 
-			if(Validation::val_username($username,$TmessagesConnection) && Validation::val_password($username,$TmessagesConnection)) {//variable verifications
+			if(Validation::val_username($username,$TmessagesConnection) && Validation::val_password($pwd,$TmessagesConnection)) {//variable verifications
 				Model_user::sign_in($username,$pwd);//connect the user
 				//maybe update messagesError to explain the user the problem ?
-				//send the guy to the good controller
 			}
 		}
 		$cont=new Controller_visitor("home"); // if variables are not correct

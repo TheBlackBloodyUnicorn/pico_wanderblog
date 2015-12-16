@@ -103,5 +103,15 @@ class DAL{
 		}
 		return $adventures[0];
 	}
+
+	static function getAllCountries(){
+		$req = 'SELECT * FROM country';
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,'');
+		$countries = array();
+		foreach ($res as $data) {
+			$countries[] = $data["name"];
+		}
+		return $countries;
+	}
 }
 ?>

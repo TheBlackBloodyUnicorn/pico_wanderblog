@@ -12,11 +12,17 @@ class Model_user
 		if(!is_null($user)){
 			$_SESSION['username'] = $user->getUsername();
 			$_SESSION['role'] = $user->getRole();
+			$_SESSION['is_confirmed'] = $user->getIsAccepted();
 			$_SESSION['logged'] = true;
 		}
 		else {
 			$TmessagesConnection[]="username or password unknown";
 		}
+	}
+
+	public static function sign_up($username, $password, $role, $email, $country){
+		DAL::addUser(Cleaning::cleanString($username), Cleaning::cleanString($password),Cleaning::cleanEmail($email), $role, 0, $country);
+		Model_user::sign_in($username,$password);
 	}
 
 	/*function to disconnect a user*/
@@ -28,7 +34,9 @@ class Model_user
 		return DAL::getUser($username, $password);
 	}
 
-
+	public static function get_countries(){
+		return DAL::getAllCountries();
+	}
 
 }
 

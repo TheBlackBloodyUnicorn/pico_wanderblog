@@ -1,7 +1,6 @@
 <?php
 class Validation{
 
-	
 	//basic verification of username
 	static function val_username($username,&$errors){
 		if($username == ''){
@@ -10,11 +9,19 @@ class Validation{
 		}
 		return true;
 	}
-	
+
 	//basic verification of password
 	static function val_password($pwd,&$errors){
 		if($pwd == ''){
-			$errors[]="Enter a password";
+			$errors[]="Type a password";
+			return false;
+		}
+		if(strlen($pwd)< 5){
+			$errors[]="Min lenght 5";
+			return false;
+		}
+		if(strlen($pwd)>40){
+			$errors[]="max legth 40";
 			return false;
 		}
 		return true;

@@ -19,7 +19,13 @@
                 echo "<input type=\"hidden\" name=\"action\" value=\"sign_in\">";
                 echo "<input type=\"submit\" name=\"sign_in\" value=\"sign in\">";
                 echo "</form>";
+                echo "<form method=\"post\" action=\"index.php\">";
+                echo "<input type=\"hidden\" name=\"action\" value=\"display_sign_up\">";
+                echo "<input type=\"submit\" name=\"\" value=\"sign up\">";
+                echo "</form>";
+                echo "</div>";
             }else{
+                echo "<div id=\"sign\">";
                 echo "<form method=\"post\" action=\"index.php\">";
                 echo "<input type=\"hidden\" name=\"action\" value=\"sign_out\">";
                 echo "<input type=\"submit\" name=\"\" value=\"sign out\">";
@@ -27,9 +33,8 @@
                 echo "</div>";
             }
             ?>
-            <a id="sign" href="signUp.php">Sign Up</a>
         </div>
-        <img src = "http://placehold.it/1200x300">
+        <!--<img src = "http://placehold.it/1200x300">-->
     </header>
 
     <nav>
@@ -40,8 +45,7 @@
     </nav>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
-        <p>>This website is all about travelling. Share your experience with other travellers.</p>
-        <button onclick="location.href='./views/signUp.php'">Sign up</button>
+        <p>This website is all about travelling. Share your experience with other travellers.</p>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){
