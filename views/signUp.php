@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="container">
-    <form>
+    <>
         Username:<br>
         <input type = "text" name = username>
         <br>
@@ -17,15 +17,13 @@
         Confirm password:<br>
         <input type = "text" name = confirmPass>
         <br>
-        <form action="">
         Role:<br>
-        <input type = "radio" name = role1 value = Reader>Reader
+        <input type = "radio" name = role value = Reader>Reader
         <br>
-        <input type = "radio" name = role2 value = Author>Author
+        <input type = "radio" name = role value = Author>Author
         <br>
-        <input type = "radio" name = role3 value = Administrator>Administrator
+        <input type = "radio" name = role value = Administrator>Administrator
         <br>
-        </form>
         Email:<br>
         <input type = "text" name = email>
         <br>
