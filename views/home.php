@@ -36,11 +36,13 @@
         <ul>
             <li><a href="home.php">Home</a></li>
             <li><a href="adventures.php">Adventures</a></li>
+
         </ul>
     </nav>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
         <p>This website is all about travelling. Share your experience with other travellers.</p>
+        <p><a href="signUp.php">Sign up here!</a></p>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){
