@@ -117,3 +117,9 @@ footer #link{
     float: right;
     text-align: right;
 }
+
+/*SIGN UP FORM*/
+#form-main{
+    margin-left: auto;
+    margin-right: auto;
+}

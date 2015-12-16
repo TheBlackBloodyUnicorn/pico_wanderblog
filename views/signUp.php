@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Walk-a-blog | Sign up.</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="./views/style.css" type="text/css" />
 </head>
 <body>
 <div id="container">
+    <div id="form-main">
     <form>
         Username:<br>
         <input type = "text" name = username>
@@ -31,6 +32,7 @@
         <input type = "text" name = country>
         <br>
     </form>
+        </div>
 </div>
 </body>
 </html>
