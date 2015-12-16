@@ -23,7 +23,7 @@
             echo "</div>";
         }
 echo "</div>";
-//Secho "<img src = \"http://placehold.it/1200x300\">";
+echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
