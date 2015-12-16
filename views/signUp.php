@@ -7,6 +7,7 @@
 </head>
 <body>
 <div id="container">
+    <div id=form-main">
     <form>
         Username:<br>
         <input type = "text" name = username placeholder = "This will be your username">
@@ -33,6 +34,7 @@
     </form>
     <button onclick="location.href='home.php'">Cancel</button>
     <button onclick="location.href='home.php'">Sign up</button>
+        </div>
 </div>
 </body>
 </html>
