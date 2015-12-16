@@ -41,8 +41,7 @@
     </nav>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
-        <p>This website is all about travelling. Share your experience with other travellers.</p>
-        <p><a href="signUp.php">Sign up here!</a></p>
+        <p>>This website is all about travelling. Share your experience with other travellers.</p>
         <div id="adventure-container">
           <?php
           if(isset($adventures)){
