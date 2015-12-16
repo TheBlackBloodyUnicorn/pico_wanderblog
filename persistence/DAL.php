@@ -92,5 +92,16 @@ class DAL{
 		}
 		return $comments;
 	}
+
+	static function getAdventureById($id){
+		$req = 'SELECT * FROM adventure WHERE id=?';
+		$param = array(0 => array($id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$adventures = array();
+		foreach ($res as $data) {
+			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"]);
+		}
+		return $adventures[0];
+	}
 }
 ?>
