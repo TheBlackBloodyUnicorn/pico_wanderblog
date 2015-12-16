@@ -5,16 +5,6 @@
 <?php
     include 'header.php';
 ?>
-    <nav>
-        <ul>
-            <li><a href="./views/home.php">Home</a></li>
-            <li><a href="./views/adventure.php">Adventures</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-        </ul>
-    </nav>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
         <p>>This website is all about travelling. Share your experience with other travellers.</p>
