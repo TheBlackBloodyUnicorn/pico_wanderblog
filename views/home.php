@@ -36,7 +36,6 @@
         <ul>
             <li><a href="home.php">Home</a></li>
             <li><a href="adventures.php">Adventures</a></li>
-            <li><a href="test.php">Gallery</a></li>
         </ul>
     </nav>
     <div id="content">
