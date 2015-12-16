@@ -125,6 +125,11 @@ footer #link{
     text-align: right;
 }
 
+#content{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /*SIGN UP FORM*/
 #form-main{
     margin-left: auto;
