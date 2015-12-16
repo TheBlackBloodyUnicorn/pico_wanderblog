@@ -6,6 +6,7 @@
     <link rel = "stylesheet" href = "style.css" type="text/css">
     <title>Walk-a-blog | Home</title>
 </head>
+<body>
 <?php
     include 'header.php';
 ?>

@@ -1,5 +1,4 @@
 <?php
-echo "<body>";
 echo "<div id=\"container\">";
     echo "<header>";
         echo "<div id=\"topbar\">";
