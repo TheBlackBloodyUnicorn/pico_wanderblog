@@ -7,6 +7,7 @@
     <title>Walk-a-blog | Home</title>
 </head>
 <body>
+<div id="container">
 <?php
     include 'header.php';
 ?>

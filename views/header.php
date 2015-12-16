@@ -1,5 +1,4 @@
-<?php
-echo "<div id=\"container\">";
+<?phps
     echo "<header>";
         echo "<div id=\"topbar\">";
             if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
