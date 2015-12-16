@@ -1,5 +1,8 @@
 <?php
-
+echo "<head>";
+echo "<link rel = \"stylesheet\" href = \"./views/style.css\" type=\"text/css\">";
+echo "<title>".Walk-a-blog | Home."</title>";
+echo "</head>";
 echo "<body>";
 echo "<div id=\"container\">";
     echo "<header>";

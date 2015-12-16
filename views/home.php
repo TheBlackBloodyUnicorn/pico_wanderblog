@@ -2,10 +2,10 @@
     require_once('common_functions.php');
 ?>
 <html>
-<head>
+<!--<head>
     <link rel = "stylesheet" href = "style.css" type="text/css">
     <title>Walk-a-blog | Home</title>
-</head>
+</head>-->
 <?php
     include 'header.php';
 ?>
