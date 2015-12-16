@@ -67,7 +67,7 @@ class Adventure{
     $this->description = $new;
   }
   public function getCountry(){
-    return $this->coutry;
+    return $this->country;
   }
   private function setCountry($new){
     $this->country = $new;

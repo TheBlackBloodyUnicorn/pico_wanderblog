@@ -13,6 +13,7 @@ class Model_user
 			$_SESSION['username'] = $user->getUsername();
 			$_SESSION['role'] = $user->getRole();
 			$_SESSION['is_confirmed'] = $user->getIsAccepted();
+			$_SESSION['id'] = $user->getId();
 			$_SESSION['logged'] = true;
 		}
 		else {
