@@ -12,7 +12,7 @@
 ?>
     <div id="content">
         <h1>Welcome to Walk-a-blog!</h1>
-        <p>>This website is all about travelling. Share your experience with other travellers.</p>
+        <p>>This website is all about travelling. Share your experience with other travellers. Click the link below to sign up!</p>
         <button onclick="location.href='./views/signUp.php'">Sign up</button>
         <div id="adventure-container">
           <?php
