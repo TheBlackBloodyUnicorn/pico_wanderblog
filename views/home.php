@@ -3,7 +3,7 @@
 ?>
 <html>
 <head>
-    <link rel = "stylesheet" href = "style.css" type="text/css">
+    <link rel = "stylesheet" href = "./views/style.css" type="text/css">
     <title>Walk-a-blog | Home</title>
 </head>
 <body>
