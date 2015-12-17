@@ -102,8 +102,10 @@ nav a:active{
 
 #form-sign{
     margin: auto;
-    border: 3px solid #73AD21;
+    border: 1px solid #000000;
+    border-radius: 5px;
     padding: 10px;
+    width: auto;
 }
 
 #sign a{
