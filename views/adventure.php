@@ -20,7 +20,7 @@
 					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						echo "<img src=".$adventure->getPhotos()[$c].">";
+						echo "<img src=".$adventure->getPhotos()[$c]." height=250 width=250>";
 					}
 
 					for($a = 0; $a < sizeof($adventure->getTags()); $a++){
@@ -28,6 +28,7 @@
 					}
 
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
+						echo "<p>".$adventure->getComments()[$i]->getUser_name()."</p>";
 						echo "<p>".$adventure->getComments()[$i]->getText()."</p>";
 					}
           echo "sjqd";
