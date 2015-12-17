@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="container">
-    <img src="images/cat.jpg">
+    <img src="./views/images/cat.jpg">
 </div>
 </body>
 </html>
