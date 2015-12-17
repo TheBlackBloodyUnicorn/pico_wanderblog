@@ -6,7 +6,7 @@
     <link rel = "stylesheet" href = "./views/style.css" type="text/css">
     <link rel = "stylesheet" href = "style.css" type="text/css">
     <link rel ="shortcut icon" href="./views/Images/globe.ico">
-    <title>Walk-a-blog | Home</title>
+    <title>test to verify phpstorm set up right</title>
 </head>
 <body>
 
