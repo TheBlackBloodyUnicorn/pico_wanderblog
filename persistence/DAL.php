@@ -176,7 +176,20 @@ class DAL{
 	}
 
 	static function addAdventure($user_id, $title, $description, $country){
+		$req = 'INSERT INTO adventure (user_id, title, description, country) VALUES(?,?,?,?)';
+		$param = array(0 => array($user_id, PDO::PARAM_INT), 1 => array($title, PDO::PARAM_STR), 2 => array($description, PDO::PARAM_STR), 3 => array($country, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
 
+	static function get_adv_id($user_id, $title, $country){
+		$req = 'SELECT id FROM adventure WHERE user_id=? AND title=? AND country=?';
+		$param = array(0 => array($user_id, PDO::PARAM_INT), 1 => array($title, PDO::PARAM_STR),2 => array($country, PDO::PARAM_STR));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$id = array();
+		foreach ($res as $data) {
+			$id[] = $data["id"];
+		}
+		return $id[0];
 	}
 
 	static function removeUser($user_id){

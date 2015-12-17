@@ -47,6 +47,15 @@ class Model_adventure{
   public static function addAdventure($title,$country,$description,$user_id){
     DAL::addAdventure(Cleaning::cleanInt($user_id),Cleaning::cleanString($title),Cleaning::cleanString($description),$country);
   }
+
+  public static function get_adv_id($user_id,$title,$country){
+    $res = DAL::get_adv_id(Cleaning::cleanInt($user_id),Cleaning::cleanString($title),$country);
+    return $res;
+  }
+
+  public static function add_tag($adv_id, $tag){
+    DAL::addTag($adv_id, Cleaning::cleanString($tag));
+  }
 }
 
 

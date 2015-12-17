@@ -32,10 +32,24 @@ class Controller_author{
 			$tag1 = isset($_POST['tag1']) ? $_POST['tag1'] : '';
 			$tag2 = isset($_POST['tag2']) ? $_POST['tag2'] : '';
 			$tag3 = isset($_POST['tag3']) ? $_POST['tag3'] : '';
-
+			$adv_id = 0;
 			if($title != '' && $country != '' && $description != ''){
 				Model_adventure::addAdventure($title,$country,$description,$_SESSION["id"]);
+				$adv_id = Model_adventure::get_adv_id($_SESSION["id"],$title,$country );
+				if($tag1 != '' || $tag2 != '' || $tag3 != ''){
+					echo $tag1;
+					if($tag1 != $tag2 && $tag1 != $tag3){ //if first tag is unique
+						Model_adventure::add_tag($adv_id, $tag1);
+					}
+					if($tag2 != $tag1 && $tag2 != $tag3){ //if second tag is unique
+						Model_adventure::add_tag($adv_id, $tag2);
+					}
+					if($tag3 != $tag1 && $tag3 != $tag1){ //if third tag is unique
+						Model_adventure::add_tag($adv_id, $tag3);
+					}
+				}
 			}
+
 
 			//add tags
 			//upload photos

@@ -30,9 +30,9 @@
 			Photos:<br>
 			<br>
 			Tags:<br>
-			<input type = "text" name = "tags1" placeholder = "Enter some relevant tags."><br>
-      <input type = "text" name = "tags2" placeholder = "Enter some relevant tags."><br>
-      <input type = "text" name = "tags3" placeholder = "Enter some relevant tags.">
+			<input type = "text" name = "tag1" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tag2" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tag3" placeholder = "Enter some relevant tags.">
 			<br>
 			<input type = "submit" name = "add_adventure" value = "Create">
 			<input type="hidden" name="action" value="add_adventure">
