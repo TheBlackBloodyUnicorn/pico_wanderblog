@@ -16,7 +16,7 @@
 					echo "<h1>".$adventure->getTitle()."</h1>";
 					echo "<h2>Author: ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
-					echo "<p>".$adventure->getDescription()."</p>";
+					echo "<p>Description: ".$adventure->getDescription()."</p>";
 					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
 					echo "<p>Photos:</p>";
