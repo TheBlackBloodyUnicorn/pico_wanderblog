@@ -28,10 +28,10 @@
 					echo "<p>";
 					for($a = 0; $a < sizeof($adventure->getTags()); $a++){
 						echo"".$adventure->getTags()[$a]."";
-						if($a < sizeof($adventure->getTags())){
-							echo "".","."";
+						/*if($a < sizeof($adventure->getTags())){
+							echo .",".;
 						} else {
-							echo "</p>";
+							echo ."</p>";*/
 					}
 
 					echo "<p>Comments:</p>";
