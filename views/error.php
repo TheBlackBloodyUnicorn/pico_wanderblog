@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="container">
-    <h1>This is the error page</h1>
+    <img src="images/cat.jpg">
 </div>
 </body>
 </html>
