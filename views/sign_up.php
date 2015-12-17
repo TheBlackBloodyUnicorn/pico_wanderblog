@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
 </head>
 <body>
-<div id="container">
+<div id="sign-up">
     <form method="post" action="index.php">
         Username:<br>
         <input type = "text" name = "username" placeholder = "This will be your username">

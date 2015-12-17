@@ -97,6 +97,11 @@ nav a:active{
 
 }
 
+#sign-up{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #form-sign{
     display: inline;
 }
