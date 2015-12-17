@@ -36,19 +36,19 @@ echo "</header>";
               echo"<li><a href=\"#\">Link</a></li>";
             }else{
               if($_SESSION['role'] == "author"){
-                echo"<li><a href='./profile.php'>Profile</a></li>";
+                echo"<li><a href='./views/profile.php'>Profile</a></li>";
                 echo"<li><a href=\"./index.php?action=add_display\">Add an adventure</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
               else if($_SESSION['role'] == "reader"){
-                echo"<li><a href='./profile.php'>Profile</a></li>";
+                echo"<li><a href='./views/profile.php'>Profile</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
               else if($_SESSION['role'] == "administrator"){
-                echo"<li><a href='./profile.php'>Profile</a></li>";
+                echo"<li><a href='./views/profile.php'>Profile</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
