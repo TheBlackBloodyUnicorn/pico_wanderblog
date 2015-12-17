@@ -12,7 +12,7 @@ class FrontController{
 		* create a list of action for every type of users
 		* actions correspond to the action field of a get/post method in the html
 		*/
-		$actionsAdministrator = array(NULL,"home","","","","","");
+		$actionsAdministrator = array(NULL,"home","down_vote","up_vote","display_adventure","","");
 		$actionsReader = array(NULL,"home","down_vote","up_vote","display_adventure");
 		$actionsVisitor = array(NULL,"home","display_adventure","display_sign_up","sign_up");
 		$actionsAuthor = array(Null, "home","down_vote","up_vote","display_adventure");
@@ -28,6 +28,23 @@ class FrontController{
 				}
 				switch($_SESSION['role']){
 					case "administrator":
+						if(in_array($action,$actionsAdministrator)){
+							if(in_array($action,$actionsVisitor)){
+								$cont=new Controller_visitor($action);
+							}
+							else if(in_array($action, $actionsReader)){
+								$cont=new Controller_reader($action);
+							}
+							else if(in_array($action, $actionsAuthor)){
+								$cont=new Controller_author($action);
+							}
+							else{
+								$cont=new Controller_administrator($action);
+							}
+						}else{
+							$dVueEreur[] =	"action \"".$action."\" unknown";
+							require ($rep.$views['error']);
+						}
 						break;
 					case "reader":
 						if(in_array($action,$actionsReader)){
