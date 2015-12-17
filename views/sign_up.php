@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>Walk-a-blog | Sign up.</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
+    <style>
+        body{
+            background-color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 <div id="sign-up">
