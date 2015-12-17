@@ -15,6 +15,7 @@ class Model_user
 			$_SESSION['is_confirmed'] = $user->getIsAccepted();
 			$_SESSION['id'] = $user->getId();
 			$_SESSION['logged'] = true;
+			$_SESSION['votes'] = DAL::getAllVotes($user->getId());
 		}
 		else {
 			$TmessagesConnection[]="username or password unknown";
@@ -37,6 +38,17 @@ class Model_user
 
 	public static function get_countries(){
 		return DAL::getAllCountries();
+	}
+
+	public static function vote($adv_id){
+		DAL::vote(Cleaning::cleanInt($adv_id), $_SESSION['id']);
+		$_SESSION['votes'][]=$adv_id;
+	}
+
+	public static function remove_vote($adv_id){
+		DAL::removeVote(Cleaning::cleanInt($adv_id), $_SESSION['id']);
+		unset($_SESSION['votes'][array_search($adv_id,$_SESSION['votes'])]);
+		//var_dump($_SESSION['votes']);
 	}
 
 }

@@ -13,9 +13,9 @@ class FrontController{
 		* actions correspond to the action field of a get/post method in the html
 		*/
 		$actionsAdministrator = array(NULL,"home","","","","","");
-		$actionsReader = array(NULL,"home","","");
+		$actionsReader = array(NULL,"home","down_vote","up_vote","display_adventure");
 		$actionsVisitor = array(NULL,"home","display_adventure","display_sign_up","sign_up");
-		$actionsAuthor = array(Null, "home","");
+		$actionsAuthor = array(Null, "home","down_vote","up_vote","display_adventure");
 
 		//get the action
 		$action=isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL ;
@@ -30,11 +30,32 @@ class FrontController{
 					case "administrator":
 						break;
 					case "reader":
+						if(in_array($action,$actionsReader)){
+							if(in_array($action,$actionsVisitor)){
+								$cont=new Controller_visitor($action);
+							}else{
+								$cont=new Controller_reader($action);
+							}
+						}
 						break;
 					case "author":
+						if(in_array($action,$actionsAuthor)){
+							if(in_array($action,$actionsVisitor)){
+								$cont=new Controller_visitor($action);
+							}
+							else if(in_array($action, $actionsReader)){
+								$cont=new Controller_reader($action);
+							}
+							else{
+								$cont=new Controller_author($action);
+							}
+						}else{
+							$dVueEreur[] =	"action \"".$action."\" unknown";
+							require ($rep.$views['error']);
+						}
 						break;
 				}
-				require($rep.$views['home']);
+				//require($rep.$views['home']);
 			}
 			else {
 				if($action == 'sign_in'){

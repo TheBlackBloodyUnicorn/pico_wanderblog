@@ -10,7 +10,7 @@ class DAL{
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
 		$user = NULL;
 		foreach ($res as $data) {
-			$user = new User($data["id"],$data["username"],$data["password"],$data["user_level"], $data["email"], $data["country"], $data["is_approved"]);
+			$user = new User($data["id"],$data["username"],$data["password"],$data["user_level"], $data["email"], $data["nationality"], $data["is_approved"]);
 		}
 		return $user;
 	}
@@ -162,6 +162,17 @@ class DAL{
 		$req = 'DELETE FROM vote WHERE adventure_id=? AND user_id=?';
 		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT));
 		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function getAllVotes($user_id){
+		$req = 'SELECT adventure_id FROM vote WHERE user_id=?';
+		$param = array(0 => array($user_id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$votes = array();
+		foreach ($res as $data) {
+			$votes[] = $data["adventure_id"];
+		}
+		return $votes;
 	}
 
 	static function addAdventure($adventure){
