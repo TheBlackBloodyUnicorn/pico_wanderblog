@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Walk-a-blog | Adventures.</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
+	<link rel ="shortcut icon" href="./views/Images/globe.ico">
 </head>
 <?php
     include 'header.php';
@@ -16,19 +17,27 @@
 					echo "<h1>".$adventure->getTitle()."</h1>";
 					echo "<h2>Author: ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
-					echo "<p>".$adventure->getDescription()."</p>";
+					echo "<p>Description: ".$adventure->getDescription()."</p>";
 					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
+					echo "<p>Photos:</p>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						echo "<img src=".$adventure->getPhotos()[$c].">";
+						echo "<img src=".$adventure->getPhotos()[$c]." height=350 width=350>";
 					}
 
+					echo "<p>Tags:</p>";
+					echo "<p>";
 					for($a = 0; $a < sizeof($adventure->getTags()); $a++){
-						echo"<p>".$adventure->getTags()[$a]."</p>";
+						echo"".$adventure->getTags()[$a]."";
+						/*if($a < sizeof($adventure->getTags())){
+							echo .",".;
+						} else {
+							echo ."</p>";*/
 					}
 
+					echo "<p>Comments:</p>";
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<p>".$adventure->getComments()[$i]->getText()."</p>";
+						echo "<p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p>";
 					}
           echo "sjqd";
           if(isset($_SESSION['logged']) || $_SESSION['logged']){

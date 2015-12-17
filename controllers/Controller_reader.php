@@ -11,6 +11,8 @@ class Controller_reader{
 			case "up_vote":
 				$this->up_vote();
 				break;
+			case "profile":
+				$this->display_profile();
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);
@@ -38,6 +40,13 @@ class Controller_reader{
 		global $rep, $views;
 		$adventure = Model_adventure::getAdventureById($id);
 		require($rep.$views["adventure"]);
+	}
+
+	private function display_profile(){
+		if(isset($_POST['profile'])){
+			global $rep, $views;
+			require($rep.$views["profile"]);
+		}
 	}
 }
 ?>
