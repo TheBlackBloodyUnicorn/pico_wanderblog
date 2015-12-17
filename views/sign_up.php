@@ -7,6 +7,7 @@
     <style>
         body{
             background-color: #ffffff;
+            background-image: none;
         }
     </style>
 </head>
