@@ -37,7 +37,7 @@ echo "</header>";
             }else{
               if($_SESSION['role'] == "author"){
                 echo"<li><a href=\"#\">Profile</a></li>";
-                echo"<li><a href=\"./index.php/?action=add_display\">Add an adventure</a></li>";
+                echo"<li><a href=\"./index.php?action=add_display\">Add an adventure</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
