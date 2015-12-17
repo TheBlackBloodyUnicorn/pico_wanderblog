@@ -12,5 +12,12 @@ function displayAdventureCompactForm($adventure){
 function displayProfile($user)
 {
   echo "<h1 id='profile'>".$user->getUsername()."</h1>";
+          if(isset($adventures)){
+            foreach($adventures as $adventure){
+              if($adventures->getUser_id() == $user->getId()){
+                displayAdventureCompactForm($adventure);
+              }
+            }
+          }
 }
 ?>
