@@ -43,6 +43,10 @@ class Model_adventure{
     $adventure->setAuthor($author->getUsername());
     return $adventure;
   }
+
+  public static function addAdventure($title,$country,$description,$user_id){
+    DAL::addAdventure(Cleaning::cleanInt($user_id),Cleaning::cleanString($title),Cleaning::cleanString($description),$country);
+  }
 }
 
 

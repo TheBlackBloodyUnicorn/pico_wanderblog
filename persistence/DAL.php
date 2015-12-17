@@ -175,7 +175,7 @@ class DAL{
 		return $votes;
 	}
 
-	static function addAdventure($adventure){
+	static function addAdventure($user_id, $title, $description, $country){
 
 	}
 

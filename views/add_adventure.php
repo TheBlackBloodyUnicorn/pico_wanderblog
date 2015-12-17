@@ -12,10 +12,10 @@
 	<div id="container">
 		<form method="post" action="index.php">
 			Title:<br>
-			<input type = "text" name = "adventureTitle" placeholder = "Please enter a title.">
+			<input type = "text" name = "title" placeholder = "Please enter a title.">
 			<br>
 			Country:<br>
-			<select name = "adventureCountry" placeholder = "Where was your adventure?">
+			<select name = "country" placeholder = "Where was your adventure?">
 			<?php
 				foreach($countries as $country){
 					echo "<option value=\"".$country."\">".$country."</option>";
@@ -24,14 +24,17 @@
 			</select>
 			<br>
 			Description:<br>
-			<input type = "text" name = "adventureDesc" placeholder = "Please tell us about your adventure.">
+			<textarea rows="10" cols="80" type = "text" name = "description" placeholder = "Please tell us about your adventure.">
+      </textarea>
 			<br>
 			Photos:<br>
 			<br>
 			Tags:<br>
-			<input type = "text" name = "adventureTags" placeholder = "Enter some relevant tags.">
+			<input type = "text" name = "tags1" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tags2" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tags3" placeholder = "Enter some relevant tags.">
 			<br>
-			<input type = "submit" name = "submitButton" value = "Create!">
+			<input type = "submit" name = "add_adventure" value = "Create">
 			<input type="hidden" name="action" value="add_adventure">
 		</form>
     <form action="./views/upload.php" method="post" enctype="multipart/form-data">
