@@ -27,7 +27,7 @@ echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
-            echo"<li><a href=\"../index.php?action=home\">Home</a></li>";
+            echo"<li><a href=\"/index.php?action=home\">Home</a></li>";
             echo"<li><a href=\"\">Adventures</a></li>";
             if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
               echo"<li><a href=\"#\">Link</a></li>";
