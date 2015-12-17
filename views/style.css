@@ -19,7 +19,7 @@ body{
     /*margin-left: 100px;*/
     /*margin-right: 100px;*/
     background-color: white;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 3px 3px 10px #555;
 }
 
@@ -95,6 +95,7 @@ nav a:active{
     border-radius: 5px;
     padding: 10px;
     width: 300px;
+    box-shadow: 3px 3px 10px #555;
 }
 
 #sign a{
