@@ -1,13 +1,16 @@
 <?php
-    require_once('models/Adventure.php');
+    //require_once('models/Adventure.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Walk-a-blog | Adventures.</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="./views/style.css" type="text/css" />
 </head>
+<?php
+    include 'header.php';
+?>
 <body>
 	<div id="container">
 		<div>
