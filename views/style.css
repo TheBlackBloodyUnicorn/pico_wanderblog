@@ -83,18 +83,9 @@ nav a:active{
 }
 
 #sign{
-    /*display: inline;
-    width: 500px;*/
     text-align: center;
     vertical-align: middle;
-    /*display: table-cell;*/
     float: right;
-    /*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#888888),
-    to(#ffffff));
-    background: -moz-linear-gradient(top, #888888, #ffffff);
-    background: linear-gradient(#888888, #ffffff);*/
-    /*border-radius: 5px;*/
-
 }
 
 #sign-up{
@@ -102,7 +93,7 @@ nav a:active{
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 10px;
-    align-content: center;
+    width: 300px;
 }
 
 #sign a{
