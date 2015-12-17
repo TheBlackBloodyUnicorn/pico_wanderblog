@@ -21,6 +21,7 @@ $views['footer']='views/footer.php';
 $views['header']='views/header.php';
 $views['adventure']='views/adventure.php';
 $views['sign_up']='views/sign_up.php';
+$views['add_adventure']='views/add_adventure.php';
 
 
 ?>

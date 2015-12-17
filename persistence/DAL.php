@@ -10,7 +10,7 @@ class DAL{
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
 		$user = NULL;
 		foreach ($res as $data) {
-			$user = new User($data["id"],$data["username"],$data["password"],$data["user_level"], $data["email"], $data["country"], $data["is_approved"]);
+			$user = new User($data["id"],$data["username"],$data["password"],$data["user_level"], $data["email"], $data["nationality"], $data["is_approved"]);
 		}
 		return $user;
 	}
@@ -93,6 +93,7 @@ class DAL{
 		return $comments;
 	}
 
+	/*get the adventure with the given id*/
 	static function getAdventureById($id){
 		$req = 'SELECT * FROM adventure WHERE id=?';
 		$param = array(0 => array($id, PDO::PARAM_INT));
@@ -104,6 +105,7 @@ class DAL{
 		return $adventures[0];
 	}
 
+	/*get all countries*/
 	static function getAllCountries(){
 		$req = 'SELECT * FROM country';
 		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,'');
@@ -112,6 +114,81 @@ class DAL{
 			$countries[] = $data["name"];
 		}
 		return $countries;
+	}
+
+	static function addTag($adventure_id, $name){
+		$req = 'INSERT INTO tag (adventure_id, name) VALUES(?,?)';
+		$param  = array(0 => array($adventure_id, PDO::PARAM_INT) , 1 => array($name, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function removeTagAdventure($adventure_id){
+		$req = 'DELETE FROM tag WHERE adventure_id=?';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function addPhoto($adventure_id, $user_id, $path){
+		$req = 'INSERT INTO photo (adventure_id, user_id, path) VALUES(?,?,?)';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT),2 => array($path, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function removePhoto($adventure_id, $user_id){
+		$req = 'DELETE FROM photo WHERE adventure_id=? AND user_id=?';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function addComment($user_id,$adventure_id, $content){
+		$req = 'INSERT INTO comment (user_id, adventure_id, content,date) VALUES(?,?,?,now())';
+		$param = array(0 => array($user_id, PDO::PARAM_INT),1 => array($adventure_id, PDO::PARAM_INT),2 => array($content, PDO::PARAM_STR));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function removeComment($comment_id){
+		$req = 'DELETE FROM comment WHERE id=?';
+		$param = array(0 => array($comment_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function vote( $adventure_id,$user_id){
+		$req = 'INSERT INTO vote (adventure_id, user_id) VALUES(?,?)';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function removeVote($adventure_id,$user_id){
+		$req = 'DELETE FROM vote WHERE adventure_id=? AND user_id=?';
+		$param = array(0 => array($adventure_id, PDO::PARAM_INT),1 => array($user_id, PDO::PARAM_INT));
+		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
+	}
+
+	static function getAllVotes($user_id){
+		$req = 'SELECT adventure_id FROM vote WHERE user_id=?';
+		$param = array(0 => array($user_id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$votes = array();
+		foreach ($res as $data) {
+			$votes[] = $data["adventure_id"];
+		}
+		return $votes;
+	}
+
+	static function addAdventure($adventure){
+
+	}
+
+	static function removeUser($user_id){
+
+	}
+
+	static function accept_user($user_id){
+
+	}
+
+	static function removeAdventure($adventure_id){
+
 	}
 }
 ?>

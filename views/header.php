@@ -27,12 +27,33 @@ echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
-            echo"<li><a href=\"./index.php\">Home</a></li>";
-            echo"<li><a href=\"./views/adventure.php\">Adventures</a></li>";
-            echo"<li><a href=\"#\">Link</a></li>";
-            echo"<li><a href=\"#\">Link</a></li>";
-            echo"<li><a href=\"#\">Link</a></li>";
-            echo"<li><a href=\"#\">Link</a></li>";
+            echo"<li><a href=\"index.php?action=home\">Home</a></li>";
+            echo"<li><a href=\"\">Adventures</a></li>";
+            if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
+              echo"<li><a href=\"#\">Link</a></li>";
+              echo"<li><a href=\"#\">Link</a></li>";
+              echo"<li><a href=\"#\">Link</a></li>";
+              echo"<li><a href=\"#\">Link</a></li>";
+            }else{
+              if($_SESSION['role'] == "author"){
+                echo"<li><a href=\"#\">Profile</a></li>";
+                echo"<li><a href=\"./index.php?action=add_display\">Add an adventure</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+              }
+              else if($_SESSION['role'] == "reader"){
+                echo"<li><a href=\"#\">Profile</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+              }
+              else if($_SESSION['role'] == "administrator"){
+                echo"<li><a href=\"#\">Profile</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
+              }
+            }
         echo"</ul>";
     echo"</nav>";
 ?>
