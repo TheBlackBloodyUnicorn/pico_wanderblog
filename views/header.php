@@ -42,13 +42,13 @@ echo "</header>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
               else if($_SESSION['role'] == "reader"){
-                echo"<li><a href='./views/profile.php'>Profile</a></li>";
+                echo"<li><a href='/index.php?action=profile'>Profile</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
               else if($_SESSION['role'] == "administrator"){
-                echo"<li><a href='./views/profile.php'>Profile</a></li>";
+                echo"<li><a href='/index.php?action=profile'>Profile</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
