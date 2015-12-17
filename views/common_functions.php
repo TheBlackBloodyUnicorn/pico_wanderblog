@@ -9,4 +9,8 @@ function displayAdventureCompactForm($adventure){
   echo "<hr>";
 }
 
+function displayProfile($user)
+{
+  echo "<h1 id='profile'>".$user->getUsername()."</h1>";
+}
 ?>
