@@ -3,14 +3,14 @@ html{
 
 body{
     font-family: "Trebuchet MS";
-    /*width: 1200px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
     background-image: url("images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;*/
+    background-size: cover;
 
 }
 
@@ -98,8 +98,6 @@ nav a:active{
 }
 
 #sign-up{
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #form-sign{
