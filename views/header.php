@@ -16,7 +16,7 @@
             echo "</div>";
         }else{
             echo "<div id=\"sign\">";
-            echo "<form method=\"post\" action=\"index.php\">";
+            echo "<form method=\"post\" action=\"./index.php\">";
             echo "<input type=\"hidden\" name=\"action\" value=\"sign_out\">";
             echo "<input type=\"submit\" name=\"\" value=\"sign out\">";
             echo "</form>";
@@ -27,7 +27,7 @@ echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
-            echo"<li><a href=\"index.php?action=home\">Home</a></li>";
+            echo"<li><a href=\"./index.php?action=home\">Home</a></li>";
             echo"<li><a href=\"\">Adventures</a></li>";
             if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
               echo"<li><a href=\"#\">Link</a></li>";
