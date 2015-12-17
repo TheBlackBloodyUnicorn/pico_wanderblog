@@ -44,7 +44,10 @@
       }
     }
     ?>
-    <button onclick="location.href='home.php'">Cancel</button>
+    <form method="post" action="index.php">
+      <input type="submit" name="home" value="home">
+      <input type="hidden" name="action" value="home">
+    </form>
 </div>
 </body>
 </html>

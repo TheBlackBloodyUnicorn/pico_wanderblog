@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Walk-a-blog | Create an Adventure.</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="./views/style.css" type="text/css"/>
 </head>
+<?php
+    include 'header.php';
+?>
 <body>
 	<div id="container">
 		<form method="post" action="index.php">
@@ -32,7 +35,10 @@
 			<input type = "submit" name = "submitButton" value = "Create!">
 			<input type="hidden" name="action" value="add_adventure">
 		</form>
-		<button onclick="location.href='home.php'">Cancel</button>
+    <form method="post" action="index.php">
+      <input type="submit" name="home" value="home">
+      <input type="hidden" name="action" value="home">
+    </form>
 	</div>
 </body>
 </html>

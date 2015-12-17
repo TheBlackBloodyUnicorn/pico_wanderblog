@@ -5,7 +5,10 @@ class Controller_author{
 
 		$tabErreur=array();
 		switch($action){
-				
+			case "add_display":
+				$countries = Model_user::get_countries();
+				require($rep.$views['add_adventure']);
+				$countries = Model_user::get_countries();break;
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);

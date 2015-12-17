@@ -1,6 +1,3 @@
-<?php
-    //require_once('models/Adventure.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
