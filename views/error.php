@@ -12,7 +12,7 @@
     include 'header.php';
     ?>
     <div id = "content">
-    <img src="./views/images/cat.jpg">
+        <img id="error" src="./views/images/cat.jpg">
     </div>
 </div>
 </body>
