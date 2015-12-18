@@ -111,6 +111,10 @@ class Model_adventure{
   public static function add_comment($adv_id, $user_id, $content){
     DAL::addComment($user_id, $adv_id,Cleaning::cleanString($content));
   }
+
+  public static function remove_adventure($id){
+    DAL::removeAdventure($id);
+  }
 }
 
 
