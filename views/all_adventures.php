@@ -13,6 +13,8 @@
 <body>
 	<div id="container">
 		<?php
+			echo "<p>Test!</p>";
+		
 			$adventures = array();
 			$adventures[0] = (new Adventure(1, "Adventure 01", "Test adventure", "Scotland", 01));
 			$adventures[1] = (new Adventure(2, "Adventure 02", "Another test adventure", "France", 02));
@@ -20,7 +22,7 @@
 		
 			if(isset($adventures)){
 				for($i = 0; $i < sizeof($adventures); $i++){
-					echo "".displayAdventureCompactForm($adventures[$i])."";
+					echo "<p>".displayAdventureCompactForm($adventures[$i])."</p>";
 				}
 			}
 		?>
