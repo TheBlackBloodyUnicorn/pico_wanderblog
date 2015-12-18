@@ -107,6 +107,10 @@ class Model_adventure{
 
     return $nAdventures;
   }
+
+  public static function add_comment($adv_id, $user_id, $content){
+    DAL::addComment($user_id, $adv_id,Cleaning::cleanString($content));
+  }
 }
 
 
