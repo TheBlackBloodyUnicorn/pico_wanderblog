@@ -125,6 +125,7 @@ img #error{
 /*Comments*/
 #comment{
     margin-left: 20px;
+    width: 500px;
 }
 
 /*Footer*/
