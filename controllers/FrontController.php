@@ -12,10 +12,10 @@ class FrontController{
 		* create a list of action for every type of users
 		* actions correspond to the action field of a get/post method in the html
 		*/
-		$actionsAdministrator = array(NULL,"home","down_vote","up_vote","display_adventure","add_display","add_adventure");
+		$actionsAdministrator = array(NULL,"home","down_vote","up_vote","display_adventure","add_display","add_adventure","profile");
 		$actionsReader = array(NULL,"home","down_vote","up_vote","display_adventure","profile");
 		$actionsVisitor = array(NULL,"home","display_adventure","display_sign_up","sign_up");
-		$actionsAuthor = array(Null, "home","down_vote","up_vote","display_adventure","add_display", "add_adventure");
+		$actionsAuthor = array(Null, "home","down_vote","up_vote","display_adventure","add_display", "add_adventure", "profile");
 
 		//get the action
 		$action=isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL ;

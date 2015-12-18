@@ -60,6 +60,30 @@ class Model_adventure{
   public static function add_photo($adv_id, $user_id, $path){
     DAL::addPhoto($adv_id, Cleaning::cleanInt($user_id), Cleaning::cleanString($path));
   }
+
+  public static function getUserAdventures($user_id){
+    $adventures = DAL::getUserAdventures($user_id);
+    $photos = array();
+    $tags = array();
+    $comments = array();
+    $nAdventures = array();
+    $i = 0;
+    foreach ($adventures as $adventure){
+      $nbVotes = DAL::countVotesForAdventure($adventure->getId());
+      $photos = DAL::getPhotosAdventure($adventure->getId());
+      $tags = DAL::getTagsAdventure($adventure->getId());
+      $comments = DAL::getCommentsAdventure($adventure->getId());
+      $author = DAL::getUserById($adventure->getUser_id());
+      $adventure->setNumberOfVotes($nbVotes);
+      $adventure->setTags($tags);
+      $adventure->setPhotos($photos);
+      $adventure->setComments($comments);
+      $adventure->setAuthor($author->getUsername());
+      $nAdventures[] = $adventure;
+    }
+
+    return $nAdventures;
+  }
 }
 
 

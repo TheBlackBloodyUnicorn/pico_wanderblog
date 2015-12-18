@@ -192,6 +192,17 @@ class DAL{
 		return $id[0];
 	}
 
+	static function getUserAdventures($user_id){
+		$req = 'SELECT * FROM adventure WHERE user_id=?';
+		$param = array(0 => array($user_id, PDO::PARAM_INT));
+		$res = DB::getInstance()->prepareAndExecuteQueryWithResult($req,$param);
+		$adventures = array();
+		foreach ($res as $data) {
+			$adventures[] = new Adventure($data["id"],$data["title"],$data["description"],$data["country"],$data["user_id"]);
+		}
+		return $adventures;
+	}
+
 	static function removeUser($user_id){
 
 	}
