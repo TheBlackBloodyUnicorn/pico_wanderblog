@@ -64,11 +64,9 @@ class FrontController{
 								$cont=new Controller_reader($action);
 							}
 							else{
-								echo "good controller";
 								$cont=new Controller_author($action);
 							}
 						}else{
-							echo "error here";
 							$dVueEreur[] =	"action \"".$action."\" unknown";
 							require ($rep.$views['error']);
 						}
