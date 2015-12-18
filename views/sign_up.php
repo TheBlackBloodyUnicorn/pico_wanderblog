@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Walk-a-blog | Sign up.</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
+    <link rel ="shortcut icon" href="./views/Images/globe.ico">
     <style>
         body{
             background-color: #ffffff;

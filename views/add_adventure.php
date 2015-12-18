@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Walk-a-blog | Create an Adventure.</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css"/>
+	<link rel ="shortcut icon" href="./views/Images/globe.ico">
 </head>
 <?php
     include 'header.php';
 ?>
 <body>
 	<div id="container">
-		<form method="post" action="index.php">
+		<form method="post" action="index.php" enctype="multipart/form-data">
 			Title:<br>
 			<input type = "text" name = "title" placeholder = "Please enter a title.">
 			<br>
@@ -30,22 +31,16 @@
 			Photos:<br>
 			<br>
 			Tags:<br>
-			<input type = "text" name = "tags1" placeholder = "Enter some relevant tags."><br>
-      <input type = "text" name = "tags2" placeholder = "Enter some relevant tags."><br>
-      <input type = "text" name = "tags3" placeholder = "Enter some relevant tags.">
+			<input type = "text" name = "tag1" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tag2" placeholder = "Enter some relevant tags."><br>
+      <input type = "text" name = "tag3" placeholder = "Enter some relevant tags.">
 			<br>
+      Select image to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <br>
 			<input type = "submit" name = "add_adventure" value = "Create">
 			<input type="hidden" name="action" value="add_adventure">
 		</form>
-    <form action="./views/upload.php" method="post" enctype="multipart/form-data">
-      Select image to upload:
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <input type="submit" value="Upload Image" name="submit">
-    </form>
-    <form method="post" action="index.php">
-      <input type="submit" name="home" value="home">
-      <input type="hidden" name="action" value="home">
-    </form>
 	</div>
 </body>
 </html>
