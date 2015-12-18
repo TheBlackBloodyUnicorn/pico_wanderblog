@@ -125,12 +125,12 @@ footer{
     margin-right: auto;
 }
 
-#footer a{
+footer #link{
     float: left;
     text-align: left;
 }
 
-#footer p{
+footer #footer{
     /*margin-left: 30px;*/
     float: right;
     text-align: right;
