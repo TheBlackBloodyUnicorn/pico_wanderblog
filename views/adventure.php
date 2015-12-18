@@ -36,9 +36,14 @@
           echo "</p>";
 
 					echo "<h3>Comments:</h3>";
+                    echo "<div id='comments-container'>";
+                    if(sizeof($adventure->getComments()) == 0){
+                        echo "<p>There are no comments on this post</p>";
+                    }
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
 						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br>: ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
+                    echo "</div>";
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
               if(in_array($adventure->getId(),$_SESSION['votes'])){
