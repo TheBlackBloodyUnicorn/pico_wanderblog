@@ -15,5 +15,8 @@
         <img id="error" src="./views/images/cat.jpg">
     </div>
 </div>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>
