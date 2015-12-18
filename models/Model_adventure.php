@@ -56,6 +56,10 @@ class Model_adventure{
   public static function add_tag($adv_id, $tag){
     DAL::addTag($adv_id, Cleaning::cleanString($tag));
   }
+
+  public static function add_photo($adv_id, $user_id, $path){
+    DAL::addPhoto($adv_id, Cleaning::cleanInt($user_id), Cleaning::cleanString($path));
+  }
 }
 
 

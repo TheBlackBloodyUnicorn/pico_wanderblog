@@ -25,6 +25,7 @@ class Controller_author{
 	}
 
 	private function add_adventure(){
+		global $rep, $views;
 		if(isset($_POST['add_adventure'])){
 			$title = isset($_POST['title']) ? $_POST['title'] : '';
 			$country = isset($_POST['country']) ? $_POST['country'] : '';
@@ -36,24 +37,23 @@ class Controller_author{
 			if($title != '' && $country != '' && $description != ''){
 				Model_adventure::addAdventure($title,$country,$description,$_SESSION["id"]);
 				$adv_id = Model_adventure::get_adv_id($_SESSION["id"],$title,$country );
-				if($tag1 != '' || $tag2 != '' || $tag3 != ''){
-					echo $tag1;
-					if($tag1 != $tag2 && $tag1 != $tag3){ //if first tag is unique
-						Model_adventure::add_tag($adv_id, $tag1);
-					}
-					if($tag2 != $tag1 && $tag2 != $tag3){ //if second tag is unique
-						Model_adventure::add_tag($adv_id, $tag2);
-					}
-					if($tag3 != $tag1 && $tag3 != $tag1){ //if third tag is unique
-						Model_adventure::add_tag($adv_id, $tag3);
-					}
+
+				if($tag1 != $tag2 && $tag1 != $tag3 && $tag1 != ''){ //if first tag is unique and not empty
+					Model_adventure::add_tag($adv_id, $tag1);
 				}
+				if($tag2 != $tag1 && $tag2 != $tag3 && $tag2 != ''){ //if second tag is unique and not empty
+					Model_adventure::add_tag($adv_id, $tag2);
+				}
+				if($tag3 != $tag1 && $tag3 != $tag1 && $tag3 != ''){ //if third tag is unique and not empty
+					Model_adventure::add_tag($adv_id, $tag3);
+				}
+
+				if(isset($_FILES["fileToUpload"]["name"])){
+					Model_adventure::add_photo($adv_id, $_SESSION["id"],"./views/images/".$_FILES["fileToUpload"]["name"]);
+				}
+				require('./views/upload.php');
 			}
-
-
-			//add tags
-			//upload photos
-			//add photos
+			new Controller_visitor('home');
 		}
 	}
 }

@@ -10,7 +10,7 @@
 ?>
 <body>
 	<div id="container">
-		<form method="post" action="index.php">
+		<form method="post" action="index.php" enctype="multipart/form-data">
 			Title:<br>
 			<input type = "text" name = "title" placeholder = "Please enter a title.">
 			<br>
@@ -34,18 +34,12 @@
       <input type = "text" name = "tag2" placeholder = "Enter some relevant tags."><br>
       <input type = "text" name = "tag3" placeholder = "Enter some relevant tags.">
 			<br>
+      Select image to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      <br>
 			<input type = "submit" name = "add_adventure" value = "Create">
 			<input type="hidden" name="action" value="add_adventure">
 		</form>
-    <form action="./views/upload.php" method="post" enctype="multipart/form-data">
-      Select image to upload:
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      <input type="submit" value="Upload Image" name="submit">
-    </form>
-    <form method="post" action="index.php">
-      <input type="submit" name="home" value="home">
-      <input type="hidden" name="action" value="home">
-    </form>
 	</div>
 </body>
 </html>
