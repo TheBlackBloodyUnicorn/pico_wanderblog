@@ -46,7 +46,7 @@
                         echo "<p><i>There are no comments on this post</i></p>";
                     }
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br> ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
+						echo "<div id='comment'><p><b>".$adventure->getComments()[$i]->getUser_name()."</b><br> ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
                     echo "</div>";
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
