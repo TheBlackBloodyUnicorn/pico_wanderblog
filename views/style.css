@@ -127,11 +127,10 @@ footer{
 
 footer #link{
     display:inline;
-
 }
 
-#copyright{
-    margin-left: 30px;
+footer #copyright{
+    /*margin-left: 30px;*/
     float: right;
     text-align: right;
 }
