@@ -35,7 +35,7 @@
 
 					echo "<h3>Comments:</h3>";
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p>";
+						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
