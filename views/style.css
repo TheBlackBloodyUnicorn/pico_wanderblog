@@ -121,9 +121,9 @@ footer{
     margin-top: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    /*display: inline;*/
     background-color: white;
     border-radius: 5px;
     box-shadow: 3px 3px 10px #ffffff;
