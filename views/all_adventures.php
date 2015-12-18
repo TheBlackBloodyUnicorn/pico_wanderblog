@@ -14,19 +14,17 @@
 	<div id="container">
 		<div>
 			<?php
-				echo "<p>Test!</p>";
-				
 				$testAdventure1 = new Adventure("Adventure 01");
 				$testAdventure2 = new Adventure("Adventure 02");
 				$testAdventure3 = new Adventure("Adventure 03");
 		
 				$adventures = array($testAdventure1, $testAdventure2, $testAdventure3);
 		
-				if(isset($adventures)){
+				/*if(isset($adventures)){
 					for($i = 0; $i < sizeof($adventures); $i++){
 						displayAdventureCompactForm($adventure);
 					}
-				}
+				}*/
 			?>
 		</div>
 	</div>
