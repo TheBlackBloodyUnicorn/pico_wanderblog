@@ -18,11 +18,11 @@
 			$adventures[1] = (new Adventure(2, "Adventure 02", "Another test adventure", "France", 02));
 			$adventures[2] = (new Adventure(3, "Adventure 03", "Yet another test adventure", "Austria", 01));
 		
-			/*if(isset($adventure)){
+			if(isset($adventures)){
 				for($i = 0; $i < sizeof($adventures); $i++){
 					echo "".displayAdventureCompactForm($adventures[$i])."";
 				}
-			}*/
+			}
 		?>
 	</div>
 </body>
