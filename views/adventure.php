@@ -30,9 +30,7 @@
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						if(!($adventure->getPhotos()[$c]) == null) {
-							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
-						}
+                        echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
 					}
 
 					echo "<h3>Tags:</h3>";
@@ -45,7 +43,7 @@
 					echo "<h3>Comments:</h3>";
                     echo "<div id='comments-container'>";
                     if(sizeof($adventure->getComments()) == 0){
-                        echo "<p>There are no comments on this post</p>";
+                        echo "<p><i>There are no comments on this post</i></p>";
                     }
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
 						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br>: ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
