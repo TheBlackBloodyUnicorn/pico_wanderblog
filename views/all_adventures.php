@@ -14,9 +14,12 @@
 	<div id="container">
 		<div>
 			<?php
-				$testAdventure1 = new Adventure("Adventure 01");
-				$testAdventure2 = new Adventure("Adventure 02");
-				$testAdventure3 = new Adventure("Adventure 03");
+				$testAdventure1 = new Adventure();
+				$testAdventure1->setTitle("Adventure 1");
+				$testAdventure2 = new Adventure();
+				$testAdventure2->setTitle("Adventure 2");
+				$testAdventure3 = new Adventure();
+				$testAdventure3->setTitle("Adventure 3");
 		
 				$adventures = array($testAdventure1, $testAdventure2, $testAdventure3);
 		
