@@ -17,9 +17,11 @@ require_once('common_functions.php');
     include 'header.php';
     ?>
     <div id="content">
+        <div id="profile">
         <?php
         displayProfile($user, $adventures);
         ?>
+        </div>
     </div>
     <?php
     include 'footer.php';
