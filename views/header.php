@@ -24,7 +24,7 @@
             echo "</div>";
         }
 echo "</div>";
-echo "<img src = ./views/images/logo.png>";
+echo "<img src = '/views/images/header3.jpg'>";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
