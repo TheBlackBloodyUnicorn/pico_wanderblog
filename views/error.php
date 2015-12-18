@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Walk-a-blog | Error.</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel = "stylesheet" href = "./views/style.css" type="text/css">
+    <link rel = "stylesheet" href = "style.css" type="text/css">
 </head>
 <body>
 <div id="container">
-    <img src="./views/images/cat.jpg">
+    <?php
+    include 'header.php';
+    ?>
+    <div id = "content">
+        <img id="error" src="./views/images/cat.jpg">
+    </div>
 </div>
 </body>
 </html>
