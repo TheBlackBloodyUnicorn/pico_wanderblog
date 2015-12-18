@@ -192,6 +192,7 @@ class DAL{
 		return $id[0];
 	}
 
+	/*return all the adventure from a user (adventure returned incompletes)*/
 	static function getUserAdventures($user_id){
 		$req = 'SELECT * FROM adventure WHERE user_id=?';
 		$param = array(0 => array($user_id, PDO::PARAM_INT));
@@ -204,11 +205,11 @@ class DAL{
 	}
 
 	static function removeUser($user_id){
-
+		//todo
 	}
 
 	static function accept_user($user_id){
-
+		//todo
 	}
 
 	static function removeAdventure($adventure_id){
