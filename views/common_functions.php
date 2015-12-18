@@ -21,6 +21,9 @@ function displayProfile($user, $adventures)
             foreach($adventures as $adventure){
               displayAdventureCompactForm($adventure);
             }
+            if(count($adventures) == 0){
+              echo "<p>This user has not shared any adventures yet</p>";
+            }
           }
 }
 ?>

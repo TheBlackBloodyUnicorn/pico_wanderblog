@@ -8,12 +8,12 @@
     <title>Walk-a-blog | All Adventures</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css"/>
 </head>
+<body>
+<div id="container">
 <?php
     include 'header.php';
 ?>
-<body>
-	<div id="container">
-		<div>
+		<div id="content">
 			<?php
 				if(isset($adventures)){
 					for($i = 0; $i < sizeof($adventures); $i++){
@@ -23,4 +23,8 @@
 			?>
 		</div>
 	</div>
+	<?php
+	include 'footer.php';
+	?>
 </body>
+</html>

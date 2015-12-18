@@ -20,7 +20,7 @@ body{
     /*margin-right: 100px;*/
     background-color: white;
     border-radius: 5px;
-    box-shadow: 3px 3px 10px #ffffff;
+    box-shadow: 3px 3px 10px #000000;
 }
 
 /*Header*/
@@ -114,6 +114,12 @@ nav a:active{
 #content{
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+img #error{
+    margin-top: 20px;
+    align-content: center;
 }
 
 /*Footer*/
@@ -121,26 +127,28 @@ footer{
     margin-top: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #000000;
 }
 
-footer #link{
-    float: left;
+footer.link{
     text-align: left;
+    float: left;
 }
 
-footer #footer{
-    /*margin-left: 30px;*/
-    float: right;
+footer.copyright{
+    pading-left:10px;
     text-align: right;
+    float: right;
 }
 
-.copyright{
-    /*display: inline;*/
+div.clear{
+    clear: both;
 }
 
+/*Adventures post*/
 #adventure-post div{
     margin-left: 20px;
 }

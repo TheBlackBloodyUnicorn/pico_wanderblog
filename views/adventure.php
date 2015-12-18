@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
 	<link rel ="shortcut icon" href="./views/Images/globe.ico">
 </head>
+<body>
+<div id="container">
 <?php
     include 'header.php';
 ?>
-<body>
-	<div id="container">
-		<div>
+
+		<div id="content">
 			<?php
 				if(isset($adventure)){
 					echo "<h1>".$adventure->getTitle()."</h1>";
@@ -67,5 +68,8 @@
 			?>
 		</div>
 	</div>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>
