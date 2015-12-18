@@ -1,4 +1,5 @@
 <?php
+/*controller for reader actions*/
 class Controller_reader{
 	function __construct($action) {
 		global $rep, $views;
@@ -24,6 +25,7 @@ class Controller_reader{
 		}
 	}
 
+	/*function called to cast a vote*/
 	private function up_vote(){
 		if(isset($_POST['up_vote'])){
 			$adv_id = isset($_POST['adventure']) ? $_POST['adventure'] : '';
@@ -32,6 +34,7 @@ class Controller_reader{
 		}
 	}
 
+	/*function called to remove a vote*/
 	private function remove_vote(){
 		if(isset($_POST['down_vote'])){
 			$adv_id = isset($_POST['adventure']) ? $_POST['adventure'] : '';
@@ -40,12 +43,14 @@ class Controller_reader{
 		}
 	}
 
+	/*function displaying the adventure with the id of the adventure*/
 	private function display_adventure($id){
 		global $rep, $views;
 		$adventure = Model_adventure::getAdventureById($id);
 		require($rep.$views["adventure"]);
 	}
 
+	/*function displaying the profile of a user*/
 	private function display_profile(){
 			global $rep, $views;
 			$user = Model_user::getUserById($_SESSION["id"]);
@@ -53,6 +58,7 @@ class Controller_reader{
 			require($rep.$views["profile"]);
 	}
 
+	/*function called when adding a comment*/
 	private function add_comment(){
 		if(isset($_POST['comment'])){
 			$adv_id = isset($_POST['adventure2comment']) ? $_POST['adventure2comment'] : '';

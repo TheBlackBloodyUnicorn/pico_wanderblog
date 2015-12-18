@@ -1,5 +1,6 @@
 <?php
 class Controller_visitor{
+	/*controller for all visitor actions */
 	function __construct($action) {
 		global $rep, $views, $errors;
 
@@ -56,10 +57,13 @@ class Controller_visitor{
 		require($rep.$views["sign_up"]);
 	}
 
+	/*function called when we click on the signup button*/
 	private function sign_up(){
 		global $rep, $views, $errors;
-		$errors=array();
+		$errors=array(); //use to display the error message if needed on the sign up form
+
 		if(isset($_POST['sign_up'])){ // If we clicked on the sign_up button
+			//get all the inputs values
 			$username = isset($_POST['username']) ? $_POST['username'] : '';
 			$pwd1 = isset($_POST['password']) ? $_POST['password'] : '';
 			$pwd2 = isset($_POST['confirmPass']) ? $_POST['confirmPass'] : '';
@@ -67,14 +71,16 @@ class Controller_visitor{
 			$email = isset($_POST['email']) ? $_POST['email'] : '';
 			$country = isset($_POST['country']) ? $_POST['country'] : '';
 
-			if($pwd1 != $pwd2){
+			if($pwd1 != $pwd2){ //check the passwords
 				$errors[]="the two passwords must be similar";
 				$this->display_sign_up();
 			}
+			//check the email
 			else if(!filter_var($email, FILTER_VALIDATE_EMAIL)||$email == ""){
 				$errors[]="invalid email";
 				$this->display_sign_up();
 			}
+			//check if passwords and usernames are valids
 			else if(Validation::val_password($pwd2,$errors) || Validation::val_username($username)) {//variable verifications
 				Model_user::sign_up($username,$pwd2,$role,$email,$country);
 				$cont=new Controller_visitor("home"); // if variables are not correct

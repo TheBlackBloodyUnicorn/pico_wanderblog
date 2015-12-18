@@ -1,9 +1,12 @@
 <?php
+/*controller for authors action*/
 class Controller_author{
 	function __construct($action) {
 		global $rep, $views;
 
 		$tabErreur=array();
+
+		//check all the actions
 		switch($action){
 			case "add_display":
 				$this->display_addpage();
@@ -22,15 +25,19 @@ class Controller_author{
 		}
 	}
 
+ /*function to display the page to add an adventure*/
 	private function display_addpage(){
 		global $rep, $views;
 		$countries = Model_user::get_countries();
 		require($rep.$views['add_adventure']);
 	}
 
+	/*function called when the button create an adventure is pressed*/
 	private function add_adventure(){
 		global $rep, $views;
+
 		if(isset($_POST['add_adventure'])){
+			//get all the informations
 			$title = isset($_POST['title']) ? $_POST['title'] : '';
 			$country = isset($_POST['country']) ? $_POST['country'] : '';
 			$description = isset($_POST['description']) ? $_POST['description'] : '';
@@ -38,6 +45,7 @@ class Controller_author{
 			$tag2 = isset($_POST['tag2']) ? $_POST['tag2'] : '';
 			$tag3 = isset($_POST['tag3']) ? $_POST['tag3'] : '';
 			$adv_id = 0;
+
 			if($title != '' && $country != '' && $description != ''){
 				Model_adventure::addAdventure($title,$country,$description,$_SESSION["id"]);
 				$adv_id = Model_adventure::get_adv_id($_SESSION["id"],$title,$country );
@@ -57,10 +65,11 @@ class Controller_author{
 				}
 				require('./views/upload.php');
 			}
-			new Controller_visitor('home');
+			new Controller_visitor('home'); //display the homepage once we're done
 		}
 	}
 
+  /*function to remove an adventure (should be in administrator controller)*/
 	private function remove_adventure(){
 		$adv_id = isset($_POST['adventure2remove']) ? $_POST['adventure2remove'] : '';
 		Model_adventure::remove_adventure($adv_id);
