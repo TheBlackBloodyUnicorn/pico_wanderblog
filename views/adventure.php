@@ -16,23 +16,20 @@
 			<?php
 				if(isset($adventure)){
           if($adventure->getUser_id()==$_SESSION["id"] || $_SESSION["role"]== "administrator"){
-            echo "<form method=\"post\" action=\"index.php\">";
+            echo "<form method=\"post\" action=\"./index.php\">";
             echo "<input type=\"hidden\" name=\"action\" value=\"remove_adv\">";
             echo "<input type=\"hidden\" name=\"adventure2remove\" value=\"".$adventure->getId()."\">";
             echo "<input type=\"submit\" name=\"remove_adv\" value=\"remove this adventure\">";
             echo "</form>";
           }
 					echo "<h1>".$adventure->getTitle()."</h1>";
-					echo "<h2>Author: ".$adventure->getAuthor()."</h2>";
+					echo "<h2>by ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
 					echo "<p>".$adventure->getDescription()."</p>";
-					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						if(!($adventure->getPhotos()[$c]) == null) {
-							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
-						}
+                        echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
 					}
 
 					echo "<h3>Tags:</h3>";
@@ -42,10 +39,16 @@
 					}
           echo "</p>";
 
+                    echo "<h3>Votes: ".$adventure->getNumberOfVotes()."</h3>";
 					echo "<h3>Comments:</h3>";
+                    echo "<div id='comments-container'>";
+                    if(sizeof($adventure->getComments()) == 0){
+                        echo "<p><i>There are no comments on this post</i></p>";
+                    }
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br>: ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
+						echo "<div id='comment'><p><b>".$adventure->getComments()[$i]->getUser_name()."</b><br> ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
+                    echo "</div>";
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
               if(in_array($adventure->getId(),$_SESSION['votes'])){
