@@ -24,6 +24,9 @@ class Controller_visitor{
 			case "all_adventures":
 				$this->display_all_adventures();
 				break;
+			case "profilevisitor":
+				$this->display_profile();
+				break;
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);
@@ -83,6 +86,14 @@ class Controller_visitor{
 		global $rep, $views;
 		$adventures = Model_adventure::getAllAdventures();
 		require($rep.$views["all_adventures"]);
+	}
+
+	private function display_profile(){
+		global $rep, $views;
+		$user_id = isset($_GET['id_user']) ? $_GET['id_user'] : '';
+		$user = Model_user::getUserById($_SESSION["id"]);
+		$adventures = Model_adventure::getUserAdventures($_SESSION["id"]);
+		require($rep.$views["profile"]);
 	}
 
 }

@@ -22,7 +22,7 @@
             echo "</form>";
           }
 					echo "<h1>".$adventure->getTitle()."</h1>";
-					echo "<h2>by ".$adventure->getAuthor()."</h2>";
+					echo "<h2>by <a href=\"./index.php?action=profilevisitor&id_user=".$adventure->getUser_Id()."\">".$adventure->getAuthor()."</a></h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
 					echo "<p>".$adventure->getDescription()."</p>";
 
