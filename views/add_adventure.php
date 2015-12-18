@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./views/style.css" type="text/css"/>
 	<link rel ="shortcut icon" href="./views/Images/globe.ico">
 </head>
+<body>
+<div id="container">
 <?php
     include 'header.php';
 ?>
-<body>
-	<div id="container">
+	<div id="content">
 		<form method="post" action="index.php" enctype="multipart/form-data">
 			Title:<br>
 			<input type = "text" name = "title" placeholder = "Please enter a title.">
@@ -41,6 +42,7 @@
 			<input type = "submit" name = "add_adventure" value = "Create">
 			<input type="hidden" name="action" value="add_adventure">
 		</form>
+		</div>
 	</div>
 </body>
 </html>
