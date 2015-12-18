@@ -30,7 +30,9 @@
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						echo "<img src=".$adventure->getPhotos()[$c]." height=350 width=350>";
+						if(!($adventure->getPhotos()[$c]) == null) {
+							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
+						}
 					}
 
 					echo "<h3>Tags:</h3>";
@@ -42,7 +44,7 @@
 
 					echo "<h3>Comments:</h3>";
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
+						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br>: ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){

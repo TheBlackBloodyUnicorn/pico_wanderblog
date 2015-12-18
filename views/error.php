@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Walk-a-blog | Error.</title>
-    <link rel = "stylesheet" href = "./views/style.css" type="text/css">
-    <link rel = "stylesheet" href = "style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel ="shortcut icon" href="./views/Images/globe.ico">
 </head>
 <body>
 <div id="container">
-    <?php
-    include 'header.php';
-    ?>
-    <div id = "content">
-        <img id="error" src="./views/images/cat.jpg">
-    </div>
+    <img src="./views/images/cat.jpg">
 </div>
 <?php
 include 'footer.php';
