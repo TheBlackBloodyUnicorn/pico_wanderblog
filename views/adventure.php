@@ -26,7 +26,6 @@
 					echo "<h2>by ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
 					echo "<p>".$adventure->getDescription()."</p>";
-					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
@@ -40,6 +39,7 @@
 					}
           echo "</p>";
 
+                    echo "<h3>Votes: ".$adventure->getNumberOfVotes()."</h3>";
 					echo "<h3>Comments:</h3>";
                     echo "<div id='comments-container'>";
                     if(sizeof($adventure->getComments()) == 0){
