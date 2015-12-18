@@ -15,9 +15,6 @@ body{
 }
 
 #container{
-    /*width: 1200px;*/
-    /*margin-left: 100px;*/
-    /*margin-right: 100px;*/
     background-color: white;
     border-radius: 5px;
 }
@@ -28,6 +25,33 @@ header{
     margin-right: auto;
     position: relative;
 
+}
+
+#topbar{
+    /*float: right;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+/*Sign in and Sign up buttons*/
+#sign{
+    text-align: center;
+    vertical-align: middle;
+    float: right;
+}
+
+#form-sign{
+    display: inline;
+}
+
+/*Sign up page*/
+#sign-up{
+    margin: auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
 }
 
 /*Nav Bar*/
@@ -82,35 +106,21 @@ nav a:active{
     background: linear-gradient(#DDDDDD, #FFFFFF);
 }
 
-#sign{
-    text-align: center;
-    vertical-align: middle;
-    float: right;
+#content{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#sign-up{
-    margin: auto;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 10px;
-    width: 300px;
+/*Adventures*/
+#adventure-post div{
+    margin-left: 20px;
 }
 
-#sign a{
-    /*float: right;*/
+#adventure-post h1{
+    text-decoration: none;
 }
 
-#form-sign{
-    display: inline;
-}
-
-#topbar{
-    /*float: right;*/
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-}
-
+/*Footer*/
 footer{
     margin-top: 5px;
     padding-left: 20px;
@@ -128,19 +138,6 @@ footer #link{
     margin-left: 30px;
     float: right;
     text-align: right;
-}
-
-#content{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#adventure-post div{
-    margin-left: 20px;
-}
-
-#adventure-post h1{
-    text-decoration: none;
 }
 
 /*SIGN UP FORM*/
