@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>Walk-a-blog | Create an Adventure.</title>
