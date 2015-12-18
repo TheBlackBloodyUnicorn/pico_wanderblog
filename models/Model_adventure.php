@@ -1,6 +1,29 @@
 <?php
 class Model_adventure{
 
+  public static function getAllAdventures(){
+    $adventures = DAL::getAllAdventures();
+    $photos = array();
+    $tags = array();
+    $comments = array();
+    $nAdventures = array();
+    $i = 0;
+    foreach ($adventures as $adventure){
+      $nbVotes = DAL::countVotesForAdventure($adventure->getId());
+      $photos = DAL::getPhotosAdventure($adventure->getId());
+      $tags = DAL::getTagsAdventure($adventure->getId());
+      $comments = DAL::getCommentsAdventure($adventure->getId());
+      $author = DAL::getUserById($adventure->getUser_id());
+      $adventure->setNumberOfVotes($nbVotes);
+      $adventure->setTags($tags);
+      $adventure->setPhotos($photos);
+      $adventure->setComments($comments);
+      $adventure->setAuthor($author->getUsername());
+      $nAdventures[] = $adventure;
+    }
+
+    return $nAdventures;
+  }
 /*find and return $number adventures object filled with all informations*/
   public static function getAdventures($number){
     $adventures = DAL::getAllAdventures();
