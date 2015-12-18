@@ -135,6 +135,10 @@ footer #copyright{
     text-align: right;
 }
 
+.footer{
+    display: inline;
+}
+
 #adventure-post div{
     margin-left: 20px;
 }
