@@ -121,27 +121,23 @@ footer{
     margin-top: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    /*margin-left: auto;
-    margin-right: auto;*/
-    /*display: inline;*/
     background-color: white;
     border-radius: 5px;
     box-shadow: 3px 3px 10px #ffffff;
 }
 
 footer #link{
-    /*float: left;*/
+    float: left;
     text-align: left;
 }
 
-footer #footer{
-    /*margin-left: 30px;*/
-    /*float: right;*/
+footer #copyright{
+    float: right;
     text-align: right;
 }
 
-.copyright{
-    display: inline;
+div.clear{
+    clear: both;
 }
 
 #adventure-post div{
