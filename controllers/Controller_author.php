@@ -61,7 +61,9 @@ class Controller_author{
 	}
 
 	private function remove_adventure(){
+		echo "test";
 		$adv_id = isset($_POST['adventure2remove']) ? $_POST['adventure2remove'] : '';
+		echo $adv_id;
 		Model_adventure::remove_adventure($adv_id);
 		new Controller_visitor('home');
 	}
