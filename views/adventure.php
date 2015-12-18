@@ -23,7 +23,7 @@
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						if(sizeof($adventure->getPhotos()) > 0) {
+						if(!($adventure->getPhotos()[$c]) == null) {
 							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
 						}
 					}
