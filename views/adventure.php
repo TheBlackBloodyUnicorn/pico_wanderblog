@@ -53,6 +53,16 @@
               }
             }
           }
+          if(isset($_SESSION['logged']) || $_SESSION['logged']){
+            if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
+              echo "<form method=\"post\" action=\"index.php\">";
+              echo "<textarea rows=\"10\" cols=\"80\" type = \"text\" name = \"content\"></textarea><br>";
+              echo "<input type=\"hidden\" name=\"action\" value=\"comment\">";
+              echo "<input type=\"hidden\" name=\"adventure2comment\" value=\"".$adventure->getId()."\">";
+              echo "<input type=\"submit\" name=\"comment\" value=\"add a comment\">";
+              echo "</form>";
+            }
+          }
 				}
 			?>
 		</div>
