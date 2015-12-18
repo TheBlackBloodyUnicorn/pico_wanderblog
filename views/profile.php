@@ -6,6 +6,7 @@ require_once('common_functions.php');
 <head>
     <link rel = "stylesheet" href = "./views/style.css" type="text/css">
     <link rel = "stylesheet" href = "style.css" type="text/css">
+    <link rel ="shortcut icon" href="./views/Images/globe.ico">
     <title>Walk-a-blog | Profile</title>
 </head>
 <body>
