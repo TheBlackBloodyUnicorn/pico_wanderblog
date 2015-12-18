@@ -15,6 +15,7 @@
             echo "</form>";
             echo "</div>";
         }else{
+            echo "<p>".$user->getUsername()."</p>s";
             echo "<div id=\"sign\">";
             echo "<form method=\"post\" action=\"./index.php\">";
             echo "<input type=\"hidden\" name=\"action\" value=\"sign_out\">";
