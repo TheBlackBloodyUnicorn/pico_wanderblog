@@ -15,14 +15,15 @@
 		<div>
 			<?php
 				echo "<p>Test!</p>";
+				
+				$testAdventure1 = new Adventure("Adventure 01");
+				$testAdventure2 = new Adventure("Adventure 02");
+				$testAdventure3 = new Adventure("Adventure 03");
 		
-				$adventures = array();
-				$adventures[] = new Adventure(1, "Adventure 01", "Test adventure", "Scotland", 01);
-				$adventures[] = new Adventure(2, "Adventure 02", "Another test adventure", "France", 02);
-				$adventures[] = new Adventure(3, "Adventure 03", "Yet another test adventure", "Austria", 03);
+				$adventures = array($testAdventure1, $testAdventure2, $testAdventure3);
 		
 				if(isset($adventures)){
-					foreach($adventures as $adventure){
+					for($i = 0; $i < sizeof($adventures); $i++){
 						displayAdventureCompactForm($adventure);
 					}
 				}
