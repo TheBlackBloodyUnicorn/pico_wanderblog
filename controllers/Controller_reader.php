@@ -14,6 +14,9 @@ class Controller_reader{
 			case "profile":
 				$this->display_profile();
 				break;
+			case "comment":
+				$this->add_comment();
+				break;
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);
@@ -48,6 +51,15 @@ class Controller_reader{
 			$user = Model_user::getUserById($_SESSION["id"]);
 			$adventures = Model_adventure::getUserAdventures($_SESSION["id"]);
 			require($rep.$views["profile"]);
+	}
+
+	private function add_comment(){
+		if(isset($_POST['comment'])){
+			$adv_id = isset($_POST['adventure2comment']) ? $_POST['adventure2comment'] : '';
+			$content = isset($_POST['content']) ? $_POST['content'] : '';
+			Model_adventure::add_comment($adv_id, $_SESSION["id"], $content);
+			$this->display_adventure($adv_id);
+		}
 	}
 }
 ?>

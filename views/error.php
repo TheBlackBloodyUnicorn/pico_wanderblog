@@ -10,5 +10,8 @@
 <div id="container">
     <img src="./views/images/cat.jpg">
 </div>
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

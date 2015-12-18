@@ -122,6 +122,12 @@ img #error{
     align-content: center;
 }
 
+/*Comments*/
+#comment{
+    margin-left: 20px;
+    width: 500px;
+}
+
 /*Footer*/
 footer{
     margin-top: 5px;

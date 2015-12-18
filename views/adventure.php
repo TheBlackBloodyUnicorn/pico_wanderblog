@@ -18,7 +18,7 @@
 					echo "<h1>".$adventure->getTitle()."</h1>";
 					echo "<h2>Author: ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
-					echo "<p>Description: ".$adventure->getDescription()."</p>";
+					echo "<p>".$adventure->getDescription()."</p>";
 					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
 					echo "<h3>Photos:</h3>";
@@ -35,7 +35,7 @@
 
 					echo "<h3>Comments:</h3>";
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
-						echo "<p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p>";
+						echo "<div id='comment'><p>".$adventure->getComments()[$i]->getUser_name()."<br>: ".$adventure->getComments()[$i]->getText()."</p></div><hr>";
 					}
           if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
@@ -52,6 +52,16 @@
                 echo "<input type=\"submit\" name=\"up_vote\" value=\"vote for this adventure\">";
                 echo "</form>";
               }
+            }
+          }
+          if(isset($_SESSION['logged']) || $_SESSION['logged']){
+            if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
+              echo "<form method=\"post\" action=\"index.php\">";
+              echo "<textarea rows=\"10\" cols=\"80\" type = \"text\" name = \"content\"></textarea><br>";
+              echo "<input type=\"hidden\" name=\"action\" value=\"comment\">";
+              echo "<input type=\"hidden\" name=\"adventure2comment\" value=\"".$adventure->getId()."\">";
+              echo "<input type=\"submit\" name=\"comment\" value=\"add a comment\">";
+              echo "</form>";
             }
           }
 				}
