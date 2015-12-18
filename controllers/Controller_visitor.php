@@ -21,6 +21,9 @@ class Controller_visitor{
 			case "display_sign_up":
 				$this->display_sign_up();
 				break;
+			case "all_adventures":
+				$this->display_all_adventures();
+				break;
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);
@@ -73,9 +76,13 @@ class Controller_visitor{
 				Model_user::sign_up($username,$pwd2,$role,$email,$country);
 				$cont=new Controller_visitor("home"); // if variables are not correct
 			}
-
 		}
+	}
 
+	private function display_all_adventures(){
+		global $rep, $views;
+		$adventures = Model_adventure::getAllAdventures();
+		require($rep.$views["all_adventures"]);
 	}
 
 }
