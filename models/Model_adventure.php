@@ -113,6 +113,7 @@ class Model_adventure{
   }
 
   public static function remove_adventure($id){
+    echo "right2";
     DAL::removeAdventure($id);
   }
 }
