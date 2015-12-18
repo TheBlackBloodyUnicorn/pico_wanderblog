@@ -1,4 +1,5 @@
 <?php
+/*class representing a comment*/
 class Comment{
   private $user_name;
   private $text;

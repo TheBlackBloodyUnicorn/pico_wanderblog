@@ -1,4 +1,5 @@
 <?php
+/*class representing an adventure*/
 class Adventure{
   private $id;
   private $title;
@@ -11,7 +12,7 @@ class Adventure{
   private $numberOfVotes;
   private $user_id;
 
-
+  /*getter and setters*/
   public function getUser_id(){
     return $this->user_id;
   }
@@ -73,6 +74,7 @@ class Adventure{
     $this->country = $new;
   }
 
+  /*constructor*/
   public function __construct($id,$title,$description,$country,$user_id)
   {
   $this->setId($id);

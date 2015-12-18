@@ -1,10 +1,10 @@
 <?php
-
+/*class representing a user*/
 class User
 {
-	private $username;//VARCHAR(20)
-	private $password;//VARCHAR(20)
-	private $role;//enum
+	private $username;
+	private $password;
+	private $role;
 	private $email;
 	private $country;
 	private $isAccepted;

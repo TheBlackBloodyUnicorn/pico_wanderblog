@@ -36,6 +36,7 @@ class Model_user
 		return DAL::getUser($username, $password);
 	}
 
+	/*return an array with all the countries*/
 	public static function get_countries(){
 		return DAL::getAllCountries();
 	}
