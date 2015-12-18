@@ -82,6 +82,9 @@ nav a:active{
     background: -moz-linear-gradient(top, #DDDDDD, #FFFFFF);
     background: linear-gradient(#DDDDDD, #FFFFFF);
 }
+nav a:visited{
+    color: black;
+}
 
 /*Topbar for sign up and sign in*/
 #topbar{
