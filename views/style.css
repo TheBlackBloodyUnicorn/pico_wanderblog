@@ -132,7 +132,6 @@ footer{
 footer #link{
     /*float: left;*/
     text-align: left;
-    font-size: 8px;
 }
 
 footer #footer{
@@ -142,7 +141,7 @@ footer #footer{
 }
 
 .copyright{
-    /*display: inline;*/
+    display: inline;
 }
 
 #adventure-post div{
