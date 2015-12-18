@@ -13,7 +13,20 @@
 <body>
 	<div id="container">
 		<div>
-			<p>Test!</p>
+			<?php
+				echo "<p>Test!</p>";
+		
+				$adventures = array(3);
+				$adventures[0] = (new Adventure(1, "Adventure 01", "Test adventure", "Scotland", 01));
+				$adventures[1] = (new Adventure(2, "Adventure 02", "Another test adventure", "France", 02));
+				$adventures[2] = (new Adventure(3, "Adventure 03", "Yet another test adventure", "Austria", 03));
+		
+				if(isset($adventures)){
+					for($i = 0; $i < sizeof($adventures); $i++){
+						displayAdventureCompactForm($adventures[$i]);
+					}
+				}
+			?>
 		</div>
 	</div>
 </body>
