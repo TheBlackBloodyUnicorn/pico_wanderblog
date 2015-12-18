@@ -3,7 +3,6 @@
         echo "<div id=\"topbar\">";
         if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
             echo "<div id=\"sign\">";
-
             echo "<form id = 'form-sign' method=\"post\" action=\"./index.php\">";
             echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
             echo "<input type=\"password\" name=\"password\" placeholder=\"Password\">";
@@ -24,7 +23,7 @@
             echo "</div>";
         }
 echo "</div>";
-echo "<img src = \"http://placehold.it/1200x300\">";
+echo "<img src = '/views/images/header3.jpg'>";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";

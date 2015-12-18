@@ -1,6 +1,7 @@
 html{
 }
 
+/*Style adopted by body of all pages*/
 body{
     font-family: "Trebuchet MS";
     width: 1200px;
@@ -14,6 +15,7 @@ body{
 
 }
 
+/*Style adopted by container div*/
 #container{
     /*width: 1200px;*/
     /*margin-left: 100px;*/
@@ -23,7 +25,7 @@ body{
     box-shadow: 3px 3px 10px #000000;
 }
 
-/*Header*/
+/*Style adopted by header of all pages*/
 header{
     margin-left: auto;
     margin-right: auto;
@@ -31,7 +33,7 @@ header{
 
 }
 
-/*Nav Bar*/
+/*Style adopted by the navigation bar of all pages*/
 nav{
     width: 100%;
     height: 45px;
@@ -39,6 +41,7 @@ nav{
     margin-right: auto;
 }
 
+/*Style adopted by instances of unordered list*/
 nav ul{
     list-style-type: none;
     overflow: hidden;
@@ -46,6 +49,7 @@ nav ul{
     padding: 0;
 }
 
+/*Style adopted by instances of list item*/
 nav li {
     float: left;
     display: table;
@@ -86,12 +90,13 @@ nav a:visited{
     color: black;
 }
 
-/*Topbar for sign up and sign in*/
+/*Styles adopted by Topbar for sign up and sign in*/
 #topbar{
     /*float: right;*/
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    height: 20px;
 }
 
 #sign{
@@ -123,17 +128,19 @@ img #error{
     align-content: center;
 }
 
-/*Comments*/
+/*Style adopted by comments container*/
 #comments-container{
     margin-left: 20px;
     margin-right: 20px;
 }
+
+/*Style adopted by each comment instance*/
 #comment{
     margin-left: 20px;
     width: 500px;
 }
 
-/*Footer*/
+/*Style adopted by footers of all pages*/
 footer{
     margin-top: 5px;
     padding-left: 20px;
@@ -150,7 +157,6 @@ footer.link{
 }
 
 footer.copyright{
-    pading-left:10px;
     text-align: right;
     float: right;
 }
@@ -175,7 +181,7 @@ div.clear{
     text-align: center;
 }
 
-/*SIGN UP FORM*/
+/*Style adopted by sign up form*/
 #form-main{
     margin-left: auto;
     margin-right: auto;
