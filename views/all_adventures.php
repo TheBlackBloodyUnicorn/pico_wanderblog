@@ -23,11 +23,11 @@
 		
 				$adventures = array($testAdventure1, $testAdventure2, $testAdventure3);
 		
-				/*if(isset($adventures)){
+				if(isset($adventures)){
 					for($i = 0; $i < sizeof($adventures); $i++){
 						displayAdventureCompactForm($adventure);
 					}
-				}*/
+				}
 			?>
 		</div>
 	</div>
