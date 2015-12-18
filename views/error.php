@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Walk-a-blog | Error.</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <link rel ="shortcut icon" href="./views/Images/globe.ico">
