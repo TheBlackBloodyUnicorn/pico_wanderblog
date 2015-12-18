@@ -15,6 +15,13 @@
 		<div id="content">
 			<?php
 				if(isset($adventure)){
+          if($adventure->getUser_id()==$_SESSION["id"] || $_SESSION["role"]== "administrator"){
+            echo "<form method=\"post\" action=\"index.php\">";
+            echo "<input type=\"hidden\" name=\"action\" value=\"remove_adv\">";
+            echo "<input type=\"hidden\" name=\"adventure2remove\" value=\"".$adventure->getId()."\">";
+            echo "<input type=\"submit\" name=\"remove_adv\" value=\"remove this adventure\">";
+            echo "</form>";
+          }
 					echo "<h1>".$adventure->getTitle()."</h1>";
 					echo "<h2>Author: ".$adventure->getAuthor()."</h2>";
 					echo "<p>Country: ".$adventure->getCountry()."</p>";
@@ -23,7 +30,7 @@
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						if(sizeof($adventure->getPhotos()) > 0) {
+						if(!($adventure->getPhotos()[$c]) == null) {
 							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
 						}
 					}
