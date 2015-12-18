@@ -19,7 +19,7 @@ body{
     /*margin-left: 100px;*/
     /*margin-right: 100px;*/
     background-color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 3px 3px 10px #ffffff;
 }
 
@@ -83,12 +83,25 @@ nav a:active{
     background: linear-gradient(#DDDDDD, #FFFFFF);
 }
 
+/*Topbar for sign up and sign in*/
+#topbar{
+    /*float: right;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
 #sign{
     text-align: center;
     vertical-align: middle;
     float: right;
 }
 
+#form-sign{
+    display: inline;
+}
+
+/*Sign up page*/
 #sign-up{
     margin: auto;
     border: 1px solid #000000;
@@ -98,21 +111,12 @@ nav a:active{
     box-shadow: 3px 3px 10px #000000;
 }
 
-#sign a{
-    /*float: right;*/
+#content{
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#form-sign{
-    display: inline;
-}
-
-#topbar{
-    /*float: right;*/
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
-}
-
+/*Footer*/
 footer{
     margin-top: 5px;
     padding-left: 20px;
@@ -132,17 +136,19 @@ footer #link{
     text-align: right;
 }
 
-#content{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 #adventure-post div{
     margin-left: 20px;
 }
 
 #adventure-post h1{
     text-decoration: none;
+}
+
+#profile{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    text-align: center;
 }
 
 /*SIGN UP FORM*/

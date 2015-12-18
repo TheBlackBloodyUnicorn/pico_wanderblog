@@ -13,7 +13,7 @@ function displayAdventureCompactForm($adventure){
 //display the user profile
 function displayProfile($user, $adventures)
 {
-  echo "<h1 id='profile'>".$user->getUsername()."</h1>";
+  echo "<h1>".$user->getUsername()."</h1>";
   echo "<h3>nationality :</h3>".$user->getCountry()."";
   echo "<h3>role :</h3>".$user->getRole()."";
   echo "<h3>all adventures from this author :</h3>";
