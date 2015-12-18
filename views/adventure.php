@@ -14,7 +14,7 @@
 		<div id="content">
 			<?php
 				if(isset($adventure)){
-          if($adventure->getUser_id()==$_SESSION["id"] || $_SESSION["role"]== "administrator"){
+          if($_SESSION["role"]== "administrator"){
             echo "<form method=\"post\" action=\"./index.php\">";
             echo "<input type=\"hidden\" name=\"action\" value=\"remove_adv\">";
             echo "<input type=\"hidden\" name=\"adventure2remove\" value=\"".$adventure->getId()."\">";
