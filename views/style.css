@@ -126,6 +126,11 @@ footer{
 }
 
 footer a{
+    float: left;
+    text-align: left;
+}
+
+footer p{
     /*margin-left: 30px;*/
     float: right;
     text-align: right;
