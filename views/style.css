@@ -123,6 +123,9 @@ img #error{
 }
 
 /*Comments*/
+#comments-container{
+    margin-left: 20px;
+}
 #comment{
     margin-left: 20px;
     width: 500px;
