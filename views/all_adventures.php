@@ -22,8 +22,8 @@
 				$adventures[] = new Adventure(3, "Adventure 03", "Yet another test adventure", "Austria", 03);
 		
 				if(isset($adventures)){
-					for($i = 0; $i < sizeof($adventures); $i++){
-						displayAdventureCompactForm($adventures[$i]);
+					foreach($adventures as $adventure){
+						displayAdventureCompactForm($adventure);
 					}
 				}
 			?>
