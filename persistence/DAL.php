@@ -212,6 +212,7 @@ class DAL{
 	}
 
 	static function removeAdventure($adventure_id){
+		echo "request";
 		$req = 'DELETE FROM adventure WHERE id=?';
 		$param = array(0 => array($adventure_id, PDO::PARAM_INT));
 		DB::getInstance()->prepareAndExecuteQueryWithoutResult($req,$param);
