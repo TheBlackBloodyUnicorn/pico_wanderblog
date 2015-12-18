@@ -23,7 +23,9 @@
 
 					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
-						echo "<img src=".$adventure->getPhotos()[$c]." height=350 width=350>";
+						if(sizeof($adventure->getPhotos()) > 0) {
+							echo "<img src=" . $adventure->getPhotos()[$c] . " height=350 width=350>";
+						}
 					}
 
 					echo "<h3>Tags:</h3>";
