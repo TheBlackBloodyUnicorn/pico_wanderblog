@@ -8,11 +8,11 @@
     <title>Walk-a-blog | All Adventures</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css"/>
 </head>
+<body>
+<div id="container">
 <?php
     include 'header.php';
 ?>
-<body>
-	<div id="container">
 		<div id="content">
 			<?php
 				if(isset($adventures)){
@@ -22,8 +22,9 @@
 				}
 			?>
 		</div>
-	</div>
 	<?php
 	include 'footer.php';
 	?>
+	</div>
 </body>
+</html>
