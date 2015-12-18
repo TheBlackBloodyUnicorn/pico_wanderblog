@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+
     <title>Walk-a-blog | Adventures.</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css" />
 	<link rel ="shortcut icon" href="./views/Images/globe.ico">
