@@ -12,6 +12,7 @@
 ?>
 <body>
 	<div id="container">
+		<p>Test!</p>
 		<?php
 			echo "<p>Test!</p>";
 		
@@ -22,7 +23,7 @@
 		
 			if(isset($adventures)){
 				for($i = 0; $i < sizeof($adventures); $i++){
-					echo "<p>".displayAdventureCompactForm($adventures[$i])."</p>";
+					displayAdventureCompactForm($adventures[$i]);
 				}
 			}
 		?>
