@@ -13,7 +13,7 @@
 ?>
 <body>
 	<div id="container">
-		<div>
+		<div id="content">
 			<?php
 				if(isset($adventures)){
 					for($i = 0; $i < sizeof($adventures); $i++){
