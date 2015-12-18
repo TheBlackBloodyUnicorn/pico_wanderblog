@@ -123,6 +123,7 @@ footer{
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+    display: inline;
 }
 
 footer #link{
@@ -137,7 +138,7 @@ footer #footer{
 }
 
 .copyright{
-    display: inline;
+    /*display: inline;*/
 }
 
 #adventure-post div{
