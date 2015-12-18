@@ -24,7 +24,7 @@
             echo "</div>";
         }
 echo "</div>";
-echo "<img src = \"./views/images/logo.png">";
+echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
@@ -50,7 +50,7 @@ echo "</header>";
               }
               else if($_SESSION['role'] == "administrator"){
                 echo"<li><a href=\"index.php?action=profile\">Profile</a></li>";
-                echo"<li><a href=\"index.php?action=add_display\">Add an adventure</a></li>";
+                echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
                 echo"<li><a href=\"#\">Link</a></li>";
               }
