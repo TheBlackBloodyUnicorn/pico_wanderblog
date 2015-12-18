@@ -1,10 +1,8 @@
-<!DOCTYPE html>
 <?php
     require_once('common_functions.php');
 ?>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Walk-a-blog | All Adventures</title>
     <link rel="stylesheet" href="./views/style.css" type="text/css"/>
 </head>
