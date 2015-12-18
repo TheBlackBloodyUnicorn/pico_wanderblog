@@ -3,7 +3,6 @@
         echo "<div id=\"topbar\">";
         if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
             echo "<div id=\"sign\">";
-
             echo "<form id = 'form-sign' method=\"post\" action=\"./index.php\">";
             echo "<input type=\"text\" name=\"username\" placeholder=\"Username\">";
             echo "<input type=\"password\" name=\"password\" placeholder=\"Password\">";
