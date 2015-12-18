@@ -1,5 +1,5 @@
 <?php
-
+/*class to autoload all the files everywhere*/
 class Autoload
 {
         private static $_instance = null;
@@ -17,7 +17,7 @@ class Autoload
             }
         }
 
-		
+
         public static function shutDown()
         {
             if(null !== self::$_instance) {
@@ -36,12 +36,12 @@ class Autoload
             $filename = $class.'.php';
             $dir = array('models/','./','config/','controllers/','persistence/'); //List of work folders
             foreach ($dir as $d){
-                $file=$rep.$d.$filename; 
+                $file=$rep.$d.$filename;
                 if (file_exists($file))
                 {
                     include $file;
                 }
-            }  
+            }
         }
 }
 
