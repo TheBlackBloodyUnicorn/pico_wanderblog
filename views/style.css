@@ -134,6 +134,7 @@ footer.link{
 }
 
 footer.copyright{
+    pading-left:10px;
     text-align: right;
     float: right;
 }
