@@ -127,12 +127,10 @@ footer{
 }
 
 footer #link{
-    float: left;
     text-align: left;
 }
 
 footer #copyright{
-    float: right;
     text-align: right;
 }
 
