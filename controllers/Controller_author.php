@@ -11,6 +11,9 @@ class Controller_author{
 			case "add_adventure":
 				$this->add_adventure();
 				break;
+			case "remove_adv":
+				$this->remove_adventure();
+				break;
 			default:
 				$errorView[] =	"action \"".$action."\" unknown";
 				require ($rep.$views['error']);
@@ -55,6 +58,12 @@ class Controller_author{
 			}
 			new Controller_visitor('home');
 		}
+	}
+
+	private function remove_adventure(){
+		$adv_id = isset($_POST['adventure2remove']) ? $_POST['adventure2remove'] : '';
+		Model_adventure::remove_adventure($adv_id);
+		new Controller_visitor('home');
 	}
 }
 ?>
