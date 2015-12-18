@@ -18,8 +18,7 @@ require_once('common_functions.php');
     ?>
     <div id="content">
         <?php
-        $user = new User(1, 'davidg95', 'cheese', null, 'davidg95@hotmail.co.uk', 'UK', true);
-        displayProfile($_SESSION);
+        displayProfile($user, $adventures);
         ?>
     </div>
     <?php

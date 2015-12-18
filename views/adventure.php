@@ -20,30 +20,24 @@
 					echo "<p>Description: ".$adventure->getDescription()."</p>";
 					echo "<p>Votes: ".$adventure->getNumberOfVotes()."</p>";
 
-					echo "<p>Photos:</p>";
+					echo "<h3>Photos:</h3>";
 					for($c = 0; $c < sizeof($adventure->getPhotos()); $c++){
 						echo "<img src=".$adventure->getPhotos()[$c]." height=350 width=350>";
 					}
 
-					echo "<p>Tags:</p>";
+					echo "<h3>Tags:</h3>";
 					echo "<p>";
 					for($a = 0; $a < sizeof($adventure->getTags()); $a++){
-						echo"".$adventure->getTags()[$a]."";
-						/*if($a < sizeof($adventure->getTags())){
-							echo .",".;
-						} else {
-							echo ."</p>";*/
+						echo"".$adventure->getTags()[$a]." ";
 					}
+          echo "</p>";
 
-					echo "<p>Comments:</p>";
+					echo "<h3>Comments:</h3>";
 					for($i = 0; $i < sizeof($adventure->getComments()); $i++){
 						echo "<p>".$adventure->getComments()[$i]->getUser_name().": ".$adventure->getComments()[$i]->getText()."</p>";
 					}
-          echo "sjqd";
-          if(isset($_SESSION['logged']) || $_SESSION['logged']){
-            echo "yes";
+          if((isset($_SESSION['logged']) || $_SESSION['logged']) && $_SESSION["id"]!= $adventure->getUser_id()){
             if($_SESSION['role']== "reader"||$_SESSION['role']== "author" || $_SESSION['role']== "administrator"){
-              echo "yes1";
               if(in_array($adventure->getId(),$_SESSION['votes'])){
                 echo "<form method=\"post\" action=\"index.php\">";
                 echo "<input type=\"hidden\" name=\"action\" value=\"down_vote\">";

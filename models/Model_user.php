@@ -51,6 +51,10 @@ class Model_user
 		//var_dump($_SESSION['votes']);
 	}
 
+	public static function getUserById($user_id){
+		return DAL::getUserById($user_id);
+	}
+
 }
 
 ?>
