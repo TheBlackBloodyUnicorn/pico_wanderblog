@@ -127,12 +127,12 @@ footer{
     box-shadow: 3px 3px 10px #ffffff;
 }
 
-footer #link{
+footer.link{
     text-align: left;
     float: left;
 }
 
-footer #copyright{
+footer.copyright{
     text-align: right;
     float: right;
 }
