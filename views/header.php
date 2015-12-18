@@ -24,7 +24,7 @@
             echo "</div>";
         }
 echo "</div>";
-echo "<img src = ./views/images/logo.png>";
+echo "<img src = \"http://placehold.it/1200x300\">";
 echo "</header>";
     echo"<nav>";
         echo"<ul>";
