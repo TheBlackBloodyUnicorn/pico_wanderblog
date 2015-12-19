@@ -98,7 +98,7 @@ class Controller_visitor{
 		global $rep, $views;
 		$user_id = isset($_GET['id_user']) ? $_GET['id_user'] : '';
 		$user = Model_user::getUserById($user_id);
-		$adventures = Model_adventure::getUserAdventures($_SESSION["id"]);
+		$adventures = Model_adventure::getUserAdventures($user_id);
 		require($rep.$views["profile"]);
 	}
 

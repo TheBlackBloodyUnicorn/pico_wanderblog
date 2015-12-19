@@ -12,7 +12,6 @@ class Controller_author{
 				$this->display_addpage();
 				break;
 			case "add_adventure":
-			echo "good";
 				$this->add_adventure();
 				break;
 			case "remove_adv":
