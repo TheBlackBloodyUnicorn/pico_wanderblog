@@ -28,7 +28,7 @@ echo "</header>";
     echo"<nav>";
         echo"<ul>";
             echo"<li><a href=\"./index.php?action=home\">Home</a></li>";
-            echo"<li><a href=\"./index.php?action=all_adventures\">Adventures</a></li>";
+            echo"<li><a href=\"./index.php?action=all_adventures\">All adventures</a></li>";
             if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
               echo"<li><a href=\"#\">Link</a></li>";
               echo"<li><a href=\"#\">Link</a></li>";
